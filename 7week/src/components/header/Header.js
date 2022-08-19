@@ -14,7 +14,7 @@ import Modal from "../../modal/Modal";
  
     return(
     <Head>
-    <Modal visible={login}>
+    <Modal visible={login} closeModal={closeLoginModal}>
     <div>
         <h3>로그인</h3>
         <input type='text' placeholder="아이디를 입력하세요."></input>
@@ -23,6 +23,7 @@ import Modal from "../../modal/Modal";
      </div>
         <p>아직 회원이 아니신가요?</p>
         <p style={{color:'green',cursor:'pointer',fontWeight:'bold'}} onClick={goJoin}>회원가입</p>
+        <button onClick={closeLoginModal}>되돌아가기</button>
      <div>
     </div>
     </Modal>
@@ -30,7 +31,7 @@ import Modal from "../../modal/Modal";
     <Title> velog </Title>
     <p>해</p>
     <button>돋보기</button>
-    <Button onClick={()=>{setLogin(true) }} >로그인</Button>
+    <Button onClick={()=>{setLogin(true)}} >로그인</Button>
     </Head>
     )
 
