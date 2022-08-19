@@ -40,7 +40,7 @@ const Main =()=>{
                         <h3>{e.title}</h3>
                         <h5>{e.content}</h5>
                         <p style={{fontSize:'5px'}}>{e.date}</p>
-                        <img style={{border:'1px solid black',borderRadius:'100%', width: '20px',height: '20px',objectFit: 'cover'}}src={e.user_profile}></img>
+                        <img style={{border:'1px solid black',borderRadius:'100%', width: '35px',height: '35px',objectFit: 'cover'}}src={e.user_profile}></img>
                         <p>{e.user_name}</p>  
                         </FormBox>
          )}

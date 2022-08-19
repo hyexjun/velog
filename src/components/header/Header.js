@@ -9,7 +9,8 @@ import Modal from "../../modal/Modal";
     const closeLoginModal = () => {setLogin(false)};
     const navigate = useNavigate();
     const goJoin = () => {
-        navigate("/join");
+        navigate("/join")
+        closeLoginModal();
       };
  
     return(
