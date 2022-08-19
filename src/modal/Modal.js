@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 function Modal({ visible, closeModal, children }) {
   return (
-    <div className="Modal">
+    <div className='Modal'>
       <ModalWrap visible={visible} onClick={closeModal}></ModalWrap>
       <ModalBody visible={visible}>{children}</ModalBody>
     </div>
@@ -15,7 +15,7 @@ export default Modal;
 const ModalWrap = styled.div`
   width: 100%;
   height: 100%;
-  display: ${(props) => (props.visible ? "block" : "none")};
+  display: ${(props) => (props.visible ? 'block' : 'none')};
   position: fixed;
   top: 0;
   background-color: rgba(0, 0, 0, 0.8);
@@ -23,7 +23,7 @@ const ModalWrap = styled.div`
   cursor: pointer;
 `;
 const ModalBody = styled.div`
-  display: ${(props) => (props.visible ? "block" : "none")};
+  display: ${(props) => (props.visible ? 'block' : 'none')};
   position: fixed;
   top: 50%;
   left: 50%;
