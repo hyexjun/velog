@@ -83,7 +83,7 @@ export default Main;
 
 const Wrap = styled.div`
   display: flex;
-  file-direction: row;
+  flex-direction: row;
   justify-content: center;
   gap: 20px;
   background-color: whitesmoke;
@@ -94,7 +94,7 @@ const Wrap = styled.div`
 const FormBox = styled.div`
   background-color: white;
   width: 300px;
-  maxheight: 500px;
+  max-height: 500px;
   height: 380px;
   display: flex;
   justify-content: center;
