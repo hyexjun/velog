@@ -20,8 +20,8 @@ const Header = () => {
         <Modal visible={login} closeModal={closeLoginModal}>
           <div>
             <h3>로그인</h3>
-            <input type='text' placeholder='아이디를 입력하세요.'></input>
-            <input type='text' placeholder='비밀번호를 입력하세요.'></input>
+            <input type="text" placeholder="아이디를 입력하세요."></input>
+            <input type="text" placeholder="비밀번호를 입력하세요."></input>
             <button>로그인</button>
           </div>
           <p>아직 회원이 아니신가요?</p>

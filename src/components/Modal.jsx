@@ -2,13 +2,10 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 function Modal({ visible, closeModal, children }) {
-
-
   const [isLogin, setIsLogin] = useState(false);
-  
 
   return (
-    <div className='Modal'>
+    <div className="Modal">
       <ModalWrap visible={visible} onClick={closeModal}></ModalWrap>
       <ModalBody visible={visible}>{children}</ModalBody>
     </div>
