@@ -8,11 +8,9 @@ const Header = () => {
   const closeLoginModal = () => {
     setLogin(false);
   };
+
   const navigate = useNavigate();
-  const goJoin = () => {
-    navigate('/join');
-    closeLoginModal();
-  };
+  const [signup, setSignup] = useState(false);
 
   return (
     <div>
@@ -27,7 +25,7 @@ const Header = () => {
           <p>아직 회원이 아니신가요?</p>
           <p
             style={{ color: 'green', cursor: 'pointer', fontWeight: 'bold' }}
-            onClick={goJoin}
+            onClick={() => setSignup(true)}
           >
             회원가입
           </p>
