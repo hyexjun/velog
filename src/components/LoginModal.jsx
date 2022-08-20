@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
-function Modal({ visible, closeModal, children }) {
-
+export default function LoginModal({ visible, closeModal, children }) {
   return (
     <div className="Modal">
       <ModalWrap visible={visible} onClick={closeModal}></ModalWrap>
@@ -9,8 +8,6 @@ function Modal({ visible, closeModal, children }) {
     </div>
   );
 }
-
-export default Modal;
 
 const ModalWrap = styled.div`
   width: 100%;

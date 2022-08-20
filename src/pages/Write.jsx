@@ -1,3 +1,8 @@
-export default function Write() {
-  return <>글쓰기 페이지</>;
+const Write = () => {
+  return (
+    <>
+    </>
+  )
 }
+
+export default Write;

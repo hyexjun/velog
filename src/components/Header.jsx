@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import Modal from './Modal';
+import LoginModal from './LoginModal';
 
 const Header = () => {
   const [login, setLogin] = useState(false);
@@ -11,8 +11,8 @@ const Header = () => {
 
   return (
     <div>
-      <Head>
-        <Modal visible={login} closeModal={closeLoginModal}>
+      <StDiv>
+        <LoginModal visible={login} closeModal={closeLoginModal}>
           {signup ? (
             <>
               <div>
@@ -97,7 +97,7 @@ const Header = () => {
               </div>
             </>
           )}
-        </Modal>
+        </LoginModal>
 
         <Title>velog</Title>
         <p>해</p>
@@ -109,14 +109,13 @@ const Header = () => {
         >
           로그인
         </Button>
-      </Head>
-      <p style={{ textAlign: 'center' }}>여기 추가 기능</p>
+      </StDiv>
     </div>
   );
 };
 export default Header;
 
-const Head = styled.div`
+const StDiv = styled.div`
   height: 100%;
   display: flex;
   background-color: whitesmoke;
