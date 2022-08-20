@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "imageFile": "https://item.kakaocdn.net/do/bef59207f5155a4eddd632c9a833e80d7154249a3890514a43687a85e6b6cc82",
+      "title": "글 제목",
+      "content": "글 내용",
+      "date": "며칠 전",
+      "comments": 1,
+      "userProfile": "사진 링크",
+      "username": "작성자명",
+      "heart": 1
+    },
+    {
+      "title": "리액트",
+      "content": "공부",
+      "date": "10일전",
+      "comments": 3,
+      "userProfile": "https://item.kakaocdn.net/do/bef59207f5155a4eddd632c9a833e80d7154249a3890514a43687a85e6b6cc82",
+      "username": "장호",
+      "imageFile": null,
+      "heart": 3
+    },
+    {
+      "title": "스프링",
+      "content": "공부",
+      "date": "15일전",
+      "comments": 1,
+      "userProfile": "img",
+      "username": "용성",
+      "imageFile": "https://t1.daumcdn.net/cfile/tistory/12754A4A4E979E6E10",
+      "heart": 5
+    },
+    {
+      "title": "스프링",
+      "content": "공부",
+      "date": "15일전",
+      "comments": 2,
+      "userProfile": "img",
+      "username": "예찬",
+      "imageFile": "https://t1.daumcdn.net/cfile/tistory/12754A4A4E979E6E10",
+      "heart": 0
+    }
+  ]
+}
