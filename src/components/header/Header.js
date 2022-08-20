@@ -14,6 +14,7 @@ import Modal from "../../modal/Modal";
       };
  
     return(
+      <div>
     <Head>
     <Modal visible={login} closeModal={closeLoginModal}>
     <div>
@@ -34,6 +35,8 @@ import Modal from "../../modal/Modal";
     <button>돋보기</button>
     <Button onClick={()=>{setLogin(true)}} >로그인</Button>
     </Head>
+    <p style={{textAlign:'center'}}>여기 추가 기능</p>
+    </div>
     )
 
 };
@@ -44,16 +47,15 @@ const Head =styled.div`
 height: 100%;
 display: flex;
 background-color:whitesmoke;
--webkit-box-align: center;
 align-items: center;
--webkit-box-pack: justify;
 justify-content: space-between;
+flex-wrap:wrap;
 ` 
 const Title =styled.div`
-margin-left:100px;
 margin-top:10px;
 letter-spacing:2px;
 font-size:26px;
+
 `
 const Button=styled.button`
 
