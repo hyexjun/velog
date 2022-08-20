@@ -8,32 +8,64 @@ const Header = () => {
   const closeLoginModal = () => {
     setLogin(false);
   };
+  const [signup, setSignup] = useState(false);
 
   const navigate = useNavigate();
-  const [signup, setSignup] = useState(false);
 
   return (
     <div>
       <Head>
         <Modal visible={login} closeModal={closeLoginModal}>
-          <div>
-            <h3>로그인</h3>
-            <input type="text" placeholder="아이디를 입력하세요."></input>
-            <input type="text" placeholder="비밀번호를 입력하세요."></input>
-            <button>로그인</button>
-          </div>
-          <p>아직 회원이 아니신가요?</p>
-          <p
-            style={{ color: 'green', cursor: 'pointer', fontWeight: 'bold' }}
-            onClick={() => setSignup(true)}
-          >
-            회원가입
-          </p>
-          <button onClick={closeLoginModal}>되돌아가기</button>
-          <div></div>
+          {signup ? (
+            <>
+              <div>
+                <h3>회원가입</h3>
+                <input type="text" placeholder="아이디를 입력하세요." />
+                <br />
+                <input type="text" placeholder="비밀번호를 입력하세요." />
+                <br />
+                <input type="text" placeholder="비밀번호를 한번 더" />
+                <br />
+                <button>회원가입</button>
+              </div>
+              <p>계정이 이미 있으신가요?</p>
+              <p
+                style={{
+                  color: 'green',
+                  cursor: 'pointer',
+                  fontWeight: 'bold',
+                }}
+                onClick={() => setSignup(false)}
+              >
+                로그인
+              </p>
+            </>
+          ) : (
+            <>
+              <div>
+                <h3>로그인</h3>
+                <input type="text" placeholder="아이디를 입력하세요." />
+                <br />
+                <input type="text" placeholder="비밀번호를 입력하세요." />
+                <br />
+                <button>로그인</button>
+              </div>
+              <p>아직 회원이 아니신가요?</p>
+              <p
+                style={{
+                  color: 'green',
+                  cursor: 'pointer',
+                  fontWeight: 'bold',
+                }}
+                onClick={() => setSignup(true)}
+              >
+                회원가입
+              </p>
+            </>
+          )}
         </Modal>
 
-        <Title> velog </Title>
+        <Title>velog</Title>
         <p>해</p>
         <button>돋보기</button>
         <Button
@@ -68,7 +100,6 @@ const Button = styled.button`
   background-color: black;
   color: white;
   margin-right: 150px;
-
   font-size: 15px;
   font-weight: bold;
   cursor: pointer;

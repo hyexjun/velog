@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
 import styled from 'styled-components';
 
 function Modal({ visible, closeModal, children }) {
-  const [isLogin, setIsLogin] = useState(false);
 
   return (
     <div className="Modal">
@@ -24,6 +22,7 @@ const ModalWrap = styled.div`
   z-index: 99;
   cursor: pointer;
 `;
+
 const ModalBody = styled.div`
   display: ${(props) => (props.visible ? 'block' : 'none')};
   position: fixed;
