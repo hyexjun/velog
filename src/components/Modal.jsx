@@ -31,7 +31,8 @@ const ModalBody = styled.div`
   transform: translate(-50%, -50%);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
   background-color: white;
-  width: 600px;
+  width: 50%;
+  max-width: 600px;
   height: 500px;
   padding-left: 10px;
   z-index: 100;
