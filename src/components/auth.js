@@ -1,8 +1,9 @@
-import axios from "axios";
-import { createContext } from "react";
-import { useState } from "react";
+import axios from 'axios';
+import { createContext } from 'react';
+import { useState } from 'react';
+
 const AuthContext = createContext({
-  token: "",
+  token: '',
   isLoggedIn: false,
   login: (data, user) => {},
   logout: () => {},
@@ -10,7 +11,7 @@ const AuthContext = createContext({
 });
 
 export const AuthContextProvider = (props) => {
-  const initialToken = localStorage.getItem("accessToken");
+  const initialToken = localStorage.getItem('accessToken');
 
   const [accessToken, setAccessToken] = useState(initialToken);
   const [refreshToken, setRefreshToken] = useState(null);
@@ -29,17 +30,17 @@ export const AuthContextProvider = (props) => {
     console.log(data);
     console.log(expireTime);
     setUser(user);
-    localStorage.setItem("username", user);
-    localStorage.setItem("accessToken", data.accessToken);
-    localStorage.setItem("refreshToken", data.refreshToken);
-    localStorage.setItem("isLoggedIn", !!data.accessToken);
+    localStorage.setItem('username', user);
+    localStorage.setItem('accessToken', data.accessToken);
+    localStorage.setItem('refreshToken', data.refreshToken);
+    localStorage.setItem('isLoggedIn', !!data.accessToken);
     //fleshtoken활성화하기
     setAccessToken(data.accessToken);
     setRefreshToken(data.refreshToken);
 
     const fetchDate = async (localaccessToken, localrefreshToken) => {
       axios
-        .post("http://13.209.76.88/auth/reissue", {
+        .post('http://13.209.76.88/auth/reissue', {
           accessToken: localaccessToken,
           refreshToken: localrefreshToken,
         })
@@ -53,16 +54,16 @@ export const AuthContextProvider = (props) => {
           // localStorage.removeItem("refreshToken", refreshToken);
           setAccessToken(data.accessToken);
           setRefreshToken(data.refreshToken);
-          localStorage.setItem("username", user);
-          localStorage.setItem("accessToken", data.accessToken);
-          localStorage.setItem("refreshToken", data.refreshToken);
-          localStorage.setItem("isLoggedIn", !!data.accessToken);
+          localStorage.setItem('username', user);
+          localStorage.setItem('accessToken', data.accessToken);
+          localStorage.setItem('refreshToken', data.refreshToken);
+          localStorage.setItem('isLoggedIn', !!data.accessToken);
         });
     };
-    console.log("loveyou");
+    console.log('loveyou');
     setInterval(() => {
-      const localaccessToken = localStorage.getItem("accessToken");
-      const localrefreshToken = localStorage.getItem("refreshToken");
+      const localaccessToken = localStorage.getItem('accessToken');
+      const localrefreshToken = localStorage.getItem('refreshToken');
       console.log(localaccessToken, localrefreshToken);
       if (contextValue.isLoggedIn) {
         fetchDate(localaccessToken, localrefreshToken);
@@ -72,10 +73,10 @@ export const AuthContextProvider = (props) => {
   const logoutHandler = () => {
     setAccessToken(null);
     setRefreshToken(null);
-    localStorage.removeItem("username");
-    localStorage.removeItem("accessToken");
-    localStorage.removeItem("refreshToken");
-    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem('username');
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
+    localStorage.removeItem('isLoggedIn');
   };
 
   const contextValue = {

@@ -1,22 +1,21 @@
-
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import MyPage from "./components/myPage/MyPage";
-import Main from "./components/main/Main";
-import Detail from "./components/detail/Detail";
-import Join from "./components/join/Join";
-import { Search } from "react-router-dom";
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Main from './pages/Main';
+import Detail from './pages/Detail';
+import MyPage from './pages/MyPage';
+import Write from './pages/Write';
+import SignUp from './pages/SignUp';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
     <BrowserRouter>
-   
-    <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/detail" element={<Detail />} />
-        <Route path="/mypage" element={<MyPage />} />
-        <Route path="/join" element={<Join />} />
-        <Route path="*" element={<Main />} />
+      <Routes>
+        <Route path='/' element={<Main />} />
+        <Route path='/detail' element={<Detail />} />
+        <Route path='/mypage' element={<MyPage />} />
+        <Route path='/write' element={<Write />} />
+        <Route path='/signup' element={<SignUp />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
