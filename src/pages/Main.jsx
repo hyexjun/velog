@@ -21,8 +21,8 @@ const Main = () => {
   );
 };
 
-const Layout = styled.div`
-  margin: 3% 5%;
+export const Layout = styled.div`
+  margin: 1% 5%;
   border: 1px solid red;
 `;
 
