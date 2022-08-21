@@ -4,8 +4,8 @@ import PostCard from '../components/PostCard';
 
 const Main = () => {
   return (
-    <StDiv>
-      <div>
+    <Layout>
+      <div className="top-section">
         <span>트렌딩</span>
         <span>최신</span>
       </div>
@@ -15,12 +15,13 @@ const Main = () => {
         <PostCard />
         <PostCard />
       </div>
-    </StDiv>
+    </Layout>
   );
 };
 
-const StDiv = styled.div`
+const Layout = styled.div`
   margin: 3% 5%;
   border: 1px solid red;
 `;
+
 export default Main;

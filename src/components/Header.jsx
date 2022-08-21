@@ -5,7 +5,6 @@ import LoginModal from './LoginModal';
 
 const Header = () => {
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -15,7 +14,7 @@ const Header = () => {
         <div className="container-fluid">
           <h3>velog</h3>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 header-menu">
               <i class="fa-solid fa-sun">다크모드</i>
               <i class="fa-solid fa-magnifying-glass">검색</i>
               <button type="button" className="btn btn-outline-dark">
@@ -26,7 +25,7 @@ const Header = () => {
                   className="nav-link dropdown-toggle"
                   role="button"
                   data-bs-toggle="dropdown"
-                  // aria-expanded="false"
+                  aria-expanded="false"
                 >
                   프사
                 </a>
