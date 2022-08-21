@@ -1,90 +1,85 @@
 import { useState } from 'react';
+import styled from 'styled-components';
 
 export default function LoginModal() {
   const [signup, setSignup] = useState(false);
 
-  return !signup ? (
-    <>
-      <div>
+  return (
+    <StWrap>
+      <StLeftSide>
         <img
-          style={{ width: '168px' }}
+          style={{ width: '200px' }}
           src="https://static.velog.io/static/media/undraw_joyride_hnno.fae6b95e.svg"
           alt="welcome"
         />
-        <p>환영합니다!</p>
-      </div>
-      <div>
+        <h3>환영합니다!</h3>
+      </StLeftSide>
+      <StRightSide>
         <div>
-          <h3>로그인</h3>
-          <p>아이디로 로그인</p>
-          <div>
+          <h3>{!signup ? '로그인' : '회원가입'}</h3>
+          <p>아이디로 {!signup ? '로그인' : '회원가입'}</p>
+          <StForm>
             <input type="text" placeholder="아이디를 입력하세요." />
             <input type="text" placeholder="비밀번호를 입력하세요." />
-          </div>
-          <button>로그인</button>
+            {!signup ? null : (
+              <input type="text" placeholder="비밀번호 한번더" />
+            )}
+          </StForm>
+          <button>{!signup ? '로그인' : '회원가입'}</button>
         </div>
+        <br />
         <div>
-          <p>소셜 계정으로 로그인</p>
+          <p>소셜 계정으로 {!signup ? '로그인' : '회원가입'}</p>
           <button>깃헙</button>
           <button>구글</button>
           <button>페북</button>
         </div>
+        <br />
         <div>
-          <span>아직 회원이 아니신가요?</span>
+          <span>
+            {!signup ? '아직 회원이 아니신가요?' : '계정이 이미 있으신가요?'}
+          </span>
           <span
             style={{
-              color: 'green',
+              color: '#12b886',
               cursor: 'pointer',
               fontWeight: 'bold',
             }}
-            onClick={() => setSignup(true)}
+            onClick={() => setSignup(!signup)}
           >
-            회원가입
+            {!signup ? '로그인' : '회원가입'}
           </span>
         </div>
-      </div>
-    </>
-  ) : (
-    <>
-      <div>
-        <img
-          style={{ width: '168px' }}
-          src="https://static.velog.io/static/media/undraw_joyride_hnno.fae6b95e.svg"
-          alt="welcome"
-        />
-        <p>환영합니다!</p>
-      </div>
-      <div>
-        <div>
-          <h3>회원가입</h3>
-          <p>아이디로 회원가입</p>
-          <div>
-            <input type="text" placeholder="아이디를 입력하세요." />
-            <input type="text" placeholder="비밀번호를 입력하세요." />
-            <input type="text" placeholder="비밀번호를 한번더" />
-          </div>
-          <button>회원가입</button>
-        </div>
-        <div>
-          <p>소셜 계정으로 회원가입</p>
-          <button>깃헙</button>
-          <button>구글</button>
-          <button>페북</button>
-        </div>
-        <div>
-          <span>계정이 이미 있으신가요?</span>
-          <span
-            style={{
-              color: 'green',
-              cursor: 'pointer',
-              fontWeight: 'bold',
-            }}
-            onClick={() => setSignup(false)}
-          >
-            로그인
-          </span>
-        </div>
-      </div>
-    </>
+      </StRightSide>
+    </StWrap>
   );
 }
+
+const StWrap = styled.div`
+  border: 1px solid red;
+  display: flex;
+  height: 60vh;
+`;
+
+const StLeftSide = styled.div`
+  border: 1px solid blue;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const StRightSide = styled.div`
+  border: 1px solid green;
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+`;
+
+const StForm = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
