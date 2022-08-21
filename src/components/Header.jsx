@@ -18,8 +18,8 @@ const Header = () => {
           <h3 onClick={() => navigate('/')}>velog</h3>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 header-menu">
-              <i class="fa-solid fa-sun">다크모드</i>
-              <i class="fa-solid fa-magnifying-glass">검색</i>
+              <i class="fa-solid fa-sun" />
+              <i class="fa-solid fa-magnifying-glass" />
               <button
                 className="btn btn-outline-dark"
                 onClick={() => navigate('/write')}
@@ -27,27 +27,24 @@ const Header = () => {
                 새 글 작성
               </button>
               <li className="nav-item dropdown">
-                <a
+                <div
                   className="nav-link dropdown-toggle"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  프사
-                </a>
+                  <img
+                    alt="프로필 사진"
+                    style={{ width: '45px', borderRadius: '100%' }}
+                    src="https://velog.velcdn.com/images/hyexjun/profile/108c8f1a-b604-4881-9906-00270be78272/image.jpg"
+                  />
+                </div>
+
                 <ul className="dropdown-menu">
-                  <li>
-                    <a className="dropdown-item">내 벨로그</a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item">읽기 목록</a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item">설정</a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item">로그아웃</a>
-                  </li>
+                  <li className="dropdown-item" onClick={() => navigate('/myvelog')}>내 벨로그</li>
+                  <li className="dropdown-item" onClick={() => navigate('/lists')}>읽기 목록</li>
+                  <li className="dropdown-item" onClick={() => navigate('/setting')}>설정</li>
+                  <li className="dropdown-item">로그아웃</li>
                 </ul>
               </li>
               <Button variant="dark" onClick={handleShow}>
