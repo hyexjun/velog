@@ -26,6 +26,9 @@ code {
 .header-menu > i {
   margin: 0 10px;
 }
+.header-menu > button {
+  margin: 0 10px;
+}
 
 .top-section {
   font-size: 22px;
