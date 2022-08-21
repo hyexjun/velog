@@ -1,141 +1,92 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import LoginModal from './LoginModal';
 
 const Header = () => {
   const [login, setLogin] = useState(false);
-  const closeLoginModal = () => {
-    setLogin(false);
-  };
-  const [signup, setSignup] = useState(false);
 
   return (
-    <div>
-      <StDiv>
-        <LoginModal visible={login} closeModal={closeLoginModal}>
-          {signup ? (
-            <>
-              <div>
-                <img
-                  style={{ width: '168px' }}
-                  src="https://static.velog.io/static/media/undraw_joyride_hnno.fae6b95e.svg"
-                  alt="welcome"
-                />
-                <p>환영합니다!</p>
-              </div>
-              <div>
-                <div>
-                  <h3>회원가입</h3>
-                  <p>아이디로 회원가입</p>
-                  <div>
-                    <input type="text" placeholder="아이디를 입력하세요." />
-                    <input type="text" placeholder="비밀번호를 입력하세요." />
-                    <input type="text" placeholder="비밀번호를 입력하세요." />
-                  </div>
-                  <button>회원가입</button>
-                </div>
-                <div>
-                  <p>소셜 계정으로 회원가입</p>
-                  <button>깃헙</button>
-                  <button>구글</button>
-                  <button>페북</button>
-                </div>
-                <div>
-                  <span>계정이 이미 있으신가요?</span>
-                  <span
-                    style={{
-                      color: 'green',
-                      cursor: 'pointer',
-                      fontWeight: 'bold',
-                    }}
-                    onClick={() => setSignup(false)}
-                  >
-                    로그인
-                  </span>
-                </div>
-              </div>
-            </>
-          ) : (
-            <>
-              <div>
-                <img
-                  style={{ width: '168px' }}
-                  src="https://static.velog.io/static/media/undraw_joyride_hnno.fae6b95e.svg"
-                  alt="welcome"
-                />
-                <p>환영합니다!</p>
-              </div>
-              <div>
-                <div>
-                  <h3>로그인</h3>
-                  <p>아이디로 로그인</p>
-                  <div>
-                    <input type="text" placeholder="아이디를 입력하세요." />
-                    <input type="text" placeholder="비밀번호를 입력하세요." />
-                  </div>
-                  <button>로그인</button>
-                </div>
-                <div>
-                  <p>소셜 계정으로 로그인</p>
-                  <button>깃헙</button>
-                  <button>구글</button>
-                  <button>페북</button>
-                </div>
-                <div>
-                  <span>아직 회원이 아니신가요?</span>
-                  <span
-                    style={{
-                      color: 'green',
-                      cursor: 'pointer',
-                      fontWeight: 'bold',
-                    }}
-                    onClick={() => setSignup(true)}
-                  >
-                    회원가입
-                  </span>
-                </div>
-              </div>
-            </>
-          )}
-        </LoginModal>
+    <StNav className="navbar navbar-expand-sm bg-light">
+      <StDiv className="container-fluid">
+        <a className="navbar-brand" href="#">
+          v e l o g
+        </a>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul
+            className="navbar-nav me-auto mb-2 mb-lg-0"
+            style={{
+              border: '1px solid green',
+              display: 'flex',
+              justifyContent: 'end',
+              alignItems: 'center',
+            }}
+          >
+            <li className="nav-item">
+              <button type="button" className="btn btn-outline-dark">
+                다크모드
+              </button>
+            </li>
 
-        <Title>velog</Title>
-        <p>해</p>
-        <button>돋보기</button>
-        <Button
-          onClick={() => {
-            setLogin(true);
-          }}
-        >
-          로그인
-        </Button>
+            <li className="nav-item">
+              <button type="button" className="btn btn-outline-dark">
+                돋보기
+              </button>
+            </li>
+            <li className="nav-item">
+              <button type="button" className="btn btn-outline-dark">
+                새 글 작성
+              </button>
+            </li>
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                프사
+              </a>
+              <ul className="dropdown-menu">
+                <li>
+                  <a className="dropdown-item">내 벨로그</a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    읽기 목록
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    설정
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    로그아웃
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li className="nav-item">
+              <button type="button" className="btn btn-dark">
+                로그인
+              </button>
+            </li>
+          </ul>
+        </div>
       </StDiv>
-    </div>
+    </StNav>
   );
 };
-export default Header;
+
+const StNav = styled.nav`
+  padding: 10px 5%;
+  border: 1px solid red;
+`;
 
 const StDiv = styled.div`
-  height: 100%;
-  display: flex;
-  background-color: whitesmoke;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  /* padding: 10px; */
+  border: 1px solid rebeccapurple;
 `;
-const Title = styled.div`
-  margin-top: 10px;
-  letter-spacing: 2px;
-  font-size: 26px;
-`;
-const Button = styled.button`
-  border-radius: 25px;
-  background-color: black;
-  color: white;
-  margin-right: 150px;
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
-  &:hover {
-  }
-`;
+
+export default Header;
