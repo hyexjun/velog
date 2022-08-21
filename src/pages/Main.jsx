@@ -6,8 +6,14 @@ const Main = () => {
   return (
     <Layout>
       <div className="top-section">
-        <i class="fa-solid fa-arrow-trend-up">트렌딩</i>
-        <i class="fa-solid fa-clock-rotate-left">최신</i>
+        <div>
+          <i class="fa-solid fa-arrow-trend-up" />
+          <span>트렌딩</span>
+        </div>
+        <div>
+          <i class="fa-solid fa-clock-rotate-left" />
+          <span>최신</span>
+        </div>
       </div>
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5 g-4">
         <PostCard />

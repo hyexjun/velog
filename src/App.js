@@ -5,7 +5,7 @@ import Detail from './pages/Detail';
 import MyVelog from './pages/MyVelog';
 import Lists from './pages/Lists';
 import Write from './pages/Write';
-import Setting from './pages/Setting'
+import Setting from './pages/Setting';
 import NotFound from './pages/NotFound';
 
 function App() {

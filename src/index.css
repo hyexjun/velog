@@ -6,23 +6,30 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-.header-menu {
+/* 상단 헤더 네비바 관련 css */
+.header-box {
+  width: 100%;
   display: flex;
-  justify-content: end;
+  /* justify-content: space-evenly; */
+  /* justify-content: space-between; */
   align-items: center;
+  border: 1px solid rebeccapurple;
+}
+.header-menu {
+  align-items: center;
+  /* 지우면 위아래로 길어짐 */
   border: 1px solid red;
 }
-
 .header-menu > i {
   margin: 0 10px;
 }
@@ -30,6 +37,7 @@ code {
   margin: 0 10px;
 }
 
+/* 메인페이지, 읽기 목록 페이지 탭 메뉴 */
 .top-section {
   font-size: 20px;
   height: 50px;
@@ -37,16 +45,14 @@ code {
   display: flex;
   margin-bottom: 30px;
 }
-
-.top-section > i {
+.top-section > div {
   width: 125px;
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   border: 1px solid green;
 }
-
 .top-section > p {
   width: 175px;
   height: 100%;
@@ -61,7 +67,6 @@ code {
   height: 12rem;
   object-fit: cover;
 }
-
 .card-body {
   height: 12rem;
 }
