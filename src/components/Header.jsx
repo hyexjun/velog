@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { Button, Modal } from 'react-bootstrap';
 import LoginModal from './LoginModal';
@@ -8,16 +9,21 @@ const Header = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const navigate = useNavigate();
+
   return (
     <>
       <StNav className="navbar navbar-expand-sm bg-light">
         <div className="container-fluid">
-          <h3>velog</h3>
+          <h3 onClick={() => navigate('/')}>velog</h3>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 header-menu">
               <i class="fa-solid fa-sun">다크모드</i>
               <i class="fa-solid fa-magnifying-glass">검색</i>
-              <button type="button" className="btn btn-outline-dark">
+              <button
+                className="btn btn-outline-dark"
+                onClick={() => navigate('/write')}
+              >
                 새 글 작성
               </button>
               <li className="nav-item dropdown">
