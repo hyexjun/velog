@@ -1,92 +1,78 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import { Button, Modal } from 'react-bootstrap';
 
 const Header = () => {
-  const [login, setLogin] = useState(false);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
-    <StNav className="navbar navbar-expand-sm bg-light">
-      <StDiv className="container-fluid">
-        <a className="navbar-brand" href="#">
-          v e l o g
-        </a>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul
-            className="navbar-nav me-auto mb-2 mb-lg-0"
-            style={{
-              border: '1px solid green',
-              display: 'flex',
-              justifyContent: 'end',
-              alignItems: 'center',
-            }}
-          >
-            <li className="nav-item">
-              <button type="button" className="btn btn-outline-dark">
-                다크모드
-              </button>
-            </li>
-
-            <li className="nav-item">
-              <button type="button" className="btn btn-outline-dark">
-                돋보기
-              </button>
-            </li>
-            <li className="nav-item">
+    <>
+      <StNav className="navbar navbar-expand-sm bg-light">
+        <div className="container-fluid">
+          <h3>velog</h3>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <i class="fa-solid fa-sun">다크모드</i>
+              <i class="fa-solid fa-magnifying-glass">검색</i>
               <button type="button" className="btn btn-outline-dark">
                 새 글 작성
               </button>
-            </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                프사
-              </a>
-              <ul className="dropdown-menu">
-                <li>
-                  <a className="dropdown-item">내 벨로그</a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    읽기 목록
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    설정
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    로그아웃
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li className="nav-item">
-              <button type="button" className="btn btn-dark">
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  // aria-expanded="false"
+                >
+                  프사
+                </a>
+                <ul className="dropdown-menu">
+                  <li>
+                    <a className="dropdown-item">내 벨로그</a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item">읽기 목록</a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item">설정</a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item">로그아웃</a>
+                  </li>
+                </ul>
+              </li>
+              <Button variant="dark" onClick={handleShow}>
                 로그인
-              </button>
-            </li>
-          </ul>
+              </Button>
+            </ul>
+          </div>
         </div>
-      </StDiv>
-    </StNav>
+      </StNav>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
   );
 };
 
 const StNav = styled.nav`
   padding: 10px 5%;
   border: 1px solid red;
-`;
-
-const StDiv = styled.div`
-  /* padding: 10px; */
-  border: 1px solid rebeccapurple;
 `;
 
 export default Header;
