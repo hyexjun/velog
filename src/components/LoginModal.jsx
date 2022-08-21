@@ -22,29 +22,37 @@ export default function LoginModal() {
         <div>
           <h3>{!signup ? '로그인' : '회원가입'}</h3>
           <p>아이디로 {!signup ? '로그인' : '회원가입'}</p>
-          <StForm>
-            <input type="text" placeholder="아이디를 입력하세요" ref={idRef} />
-            <input
-              type="text"
-              placeholder="비밀번호를 입력하세요"
-              ref={pw1Ref}
-            />
-            {!signup ? null : (
-              <input type="text" placeholder="비밀번호 한번더" ref={pw2Ref} />
+          <div style={{ display: 'flex' }}>
+            <StForm>
+              <input
+                type="text"
+                placeholder="아이디를 입력하세요"
+                ref={idRef}
+              />
+              <input
+                type="text"
+                placeholder="비밀번호를 입력하세요"
+                ref={pw1Ref}
+              />
+              {!signup ? null : (
+                <input type="text" placeholder="비밀번호 한번더" ref={pw2Ref} />
+              )}
+            </StForm>
+            {!signup ? (
+              <StBuuton onClick={() => {}}>로그인</StBuuton>
+            ) : (
+              <StBuuton onClick={() => {}}>회원가입</StBuuton>
             )}
-          </StForm>
-          {!signup ? (
-            <button onClick={() => {}}>로그인</button>
-          ) : (
-            <button onClick={() => {}}>회원가입</button>
-          )}
+          </div>
         </div>
         <br />
         <div>
           <p>소셜 계정으로 {!signup ? '로그인' : '회원가입'}</p>
-          <button>깃헙</button>
-          <button>구글</button>
-          <button>페북</button>
+          <StSocialBox>
+            <StSocial>깃헙</StSocial>
+            <StSocial>구글</StSocial>
+            <StSocial>페북</StSocial>
+          </StSocialBox>
         </div>
         <br />
         <div>
@@ -92,6 +100,30 @@ const StRightSide = styled.div`
 `;
 
 const StForm = styled.div`
+  width: 300px;
   display: flex;
   flex-direction: column;
+`;
+
+const StBuuton = styled.button`
+  background-color: #12b886;
+  color: white;
+  border: none;
+  width: 100px;
+  height: auto;
+  font-size: 18px;
+  font-weight: 600;
+`;
+
+const StSocial = styled.button`
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: none;
+`;
+
+const StSocialBox = styled.div`
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-evenly;
 `;
