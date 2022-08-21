@@ -1,8 +1,12 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import styled from 'styled-components';
 
 export default function LoginModal() {
   const [signup, setSignup] = useState(false);
+
+  const idRef = useRef();
+  const pw1Ref = useRef();
+  const pw2Ref = useRef();
 
   return (
     <StWrap>
@@ -19,13 +23,21 @@ export default function LoginModal() {
           <h3>{!signup ? '로그인' : '회원가입'}</h3>
           <p>아이디로 {!signup ? '로그인' : '회원가입'}</p>
           <StForm>
-            <input type="text" placeholder="아이디를 입력하세요." />
-            <input type="text" placeholder="비밀번호를 입력하세요." />
+            <input type="text" placeholder="아이디를 입력하세요" ref={idRef} />
+            <input
+              type="text"
+              placeholder="비밀번호를 입력하세요"
+              ref={pw1Ref}
+            />
             {!signup ? null : (
-              <input type="text" placeholder="비밀번호 한번더" />
+              <input type="text" placeholder="비밀번호 한번더" ref={pw2Ref} />
             )}
           </StForm>
-          <button>{!signup ? '로그인' : '회원가입'}</button>
+          {!signup ? (
+            <button onClick={() => {}}>로그인</button>
+          ) : (
+            <button onClick={() => {}}>회원가입</button>
+          )}
         </div>
         <br />
         <div>
@@ -47,7 +59,7 @@ export default function LoginModal() {
             }}
             onClick={() => setSignup(!signup)}
           >
-            {!signup ? '로그인' : '회원가입'}
+            {!signup ? '회원가입' : '로그인'}
           </span>
         </div>
       </StRightSide>
