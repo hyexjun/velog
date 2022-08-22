@@ -1,12 +1,50 @@
 import { useRef, useState } from 'react';
 import styled from 'styled-components';
-
+import apis from '../api';
+import { useNavigate } from 'react-router-dom';
+import { setCookie } from '../shared/Cookie';
 export default function LoginModal() {
   const [signup, setSignup] = useState(false);
-
   const idRef = useRef();
   const pw1Ref = useRef();
   const pw2Ref = useRef();
+  const joinHandler = () => {
+    const id = idRef.current.value;
+    const pw1 = idRef.current.value;
+    const pw2 = idRef.current.value;
+    apis
+      .registerUser({
+        username: id,
+        password1: pw1,
+        password2: pw2,
+      })
+      .then((res) => console.log(res));
+    setSignup(false).catch((err) => console.log(err));
+  };
+  const loginHandler = () => {
+    const id = idRef.current.value;
+    const pw1 = idRef.current.value;
+    apis
+      .loginUser({
+        username: id,
+        password1: pw1,
+      })
+      .then((res) => {
+        console.log(res);
+        const token = res.data;
+        setCookie(
+          'accessToken',
+          token.accessToken,
+          token.accessTokenExpireDate
+        );
+        setCookie(
+          'refreshToken',
+          token.refreshToken,
+          token.refreshTokenExpireDate
+        );
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <StWrap>
@@ -39,9 +77,9 @@ export default function LoginModal() {
               )}
             </StForm>
             {!signup ? (
-              <StButton onClick={() => {}}>로그인</StButton>
+              <StButton onClick={loginHandler}>로그인</StButton>
             ) : (
-              <StButton onClick={() => {}}>회원가입</StButton>
+              <StButton onClick={joinHandler}>회원가입</StButton>
             )}
           </div>
         </div>
