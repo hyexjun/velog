@@ -8,6 +8,7 @@ export default function LoginModal() {
   const idRef = useRef();
   const pw1Ref = useRef();
   const pw2Ref = useRef();
+
   const joinHandler = () => {
     const id = idRef.current.value;
     const pw1 = idRef.current.value;

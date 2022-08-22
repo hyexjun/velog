@@ -21,8 +21,8 @@ const Header2 = () => {
             </h2>
           </Nav>
           <Nav className="header-menu">
-            <i class="fa-solid fa-sun" />
-            <i class="fa-solid fa-magnifying-glass" />
+            <i className="fa-solid fa-sun" />
+            <i className="fa-solid fa-magnifying-glass" />
             <Button variant="outline-dark" onClick={() => navigate('/write')}>
               새 글 작성
             </Button>

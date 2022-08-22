@@ -7,11 +7,11 @@ const Main = () => {
     <Layout>
       <div className="top-section">
         <div>
-          <i class="fa-solid fa-arrow-trend-up" />
+          <i className="fa-solid fa-arrow-trend-up" />
           <span>트렌딩</span>
         </div>
         <div>
-          <i class="fa-solid fa-clock-rotate-left" />
+          <i className="fa-solid fa-clock-rotate-left" />
           <span>최신</span>
         </div>
       </div>
