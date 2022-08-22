@@ -1,3 +1,5 @@
+import styled from 'styled-components';
+
 export default function PostCard() {
   return (
     <div className="col">
@@ -9,11 +11,13 @@ export default function PostCard() {
         />
         <div className="card-body">
           <h5 className="card-title">글 제목</h5>
-          <p className="card-text">
+          <StText className="card-text">
             이 편지는 영국에서 최초로 시작되어 일년에 한바퀴를 돌면서 받는
             사람에게 행운을 주었고 지금은 당신에게로 옮겨진 이 편지는 4일 안에
-            당신 곁을 떠나야 합니다.
-          </p>
+            당신 곁을 떠나야 합니다. 이 편지는 영국에서 최초로 시작되어 일년에
+            한바퀴를 돌면서 받는 사람에게 행운을 주었고 지금은 당신에게로 옮겨진
+            이 편지는 4일 안에 당신 곁을 떠나야 합니다.
+          </StText>
         </div>
         <div className="card-footer">
           <span>프로필</span>
@@ -24,3 +28,10 @@ export default function PostCard() {
     </div>
   );
 }
+
+const StText = styled.p`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+`;

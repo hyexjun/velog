@@ -39,9 +39,9 @@ export default function LoginModal() {
               )}
             </StForm>
             {!signup ? (
-              <StBuuton onClick={() => {}}>로그인</StBuuton>
+              <StButton onClick={() => {}}>로그인</StButton>
             ) : (
-              <StBuuton onClick={() => {}}>회원가입</StBuuton>
+              <StButton onClick={() => {}}>회원가입</StButton>
             )}
           </div>
         </div>
@@ -67,7 +67,7 @@ export default function LoginModal() {
             }}
             onClick={() => setSignup(!signup)}
           >
-            {!signup ? '회원가입' : '로그인'}
+            {!signup ? ' 회원가입' : ' 로그인'}
           </span>
         </div>
       </StRightSide>
@@ -105,7 +105,7 @@ const StForm = styled.div`
   flex-direction: column;
 `;
 
-const StBuuton = styled.button`
+export const StButton = styled.button`
   background-color: #12b886;
   color: white;
   border: none;

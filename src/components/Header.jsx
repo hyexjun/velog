@@ -16,7 +16,9 @@ const Header2 = () => {
       <Navbar collapseOnSelect expand="sm" bg="light" variant="light">
         <Container className="header-box">
           <Nav className="me-auto">
-            <h2 onClick={() => navigate('/')}>velog</h2>
+            <h2 style={{ cursor: 'pointer' }} onClick={() => navigate('/')}>
+              velog
+            </h2>
           </Nav>
           <Nav className="header-menu">
             <i class="fa-solid fa-sun" />
@@ -82,10 +84,5 @@ const Header2 = () => {
     </>
   );
 };
-
-const StNav = styled.nav`
-  padding: 10px 5%;
-  border: 1px solid red;
-`;
 
 export default Header2;
