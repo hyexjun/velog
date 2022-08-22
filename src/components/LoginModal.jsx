@@ -1,13 +1,49 @@
 import { useRef, useState } from 'react';
 import styled from 'styled-components';
-
+import apis from '../api';
+import { useNavigate } from 'react-router-dom';
+import { setCookie } from '../shared/Cookie';
 export default function LoginModal() {
   const [signup, setSignup] = useState(false);
+  const idRef=useRef();
+  const pw1Ref=useRef();
+  const pw2Ref=useRef();
+  const joinHandler =()=>{
+    const id=idRef.current.value;
+    const pw1=idRef.current.value;
+    const pw2=idRef.current.value;
+    apis.registerUser({
+    "username": id,
+    "password1": pw1,
+    "password2": pw2}).then(
+      (res)=>console.log(res)
+      );setSignup(false)
+      .catch(
+        (err)=>console.log(err)
+      );
+    }
+  const loginHandler =()=>{
+    const id=idRef.current.value;
+    const pw1=idRef.current.value;
+    apis.loginUser({
+      "username": id,
+      "password1": pw1,}).then(
 
-  const idRef = useRef();
-  const pw1Ref = useRef();
-  const pw2Ref = useRef();
+        (res)=>{
+          console.log(res);
+          const token = res.data;
+          setCookie('accessToken',token.accessToken,token.accessTokenExpireDate);
+          setCookie('refreshToken',token.refreshToken,token.refreshTokenExpireDate);
+        }
+        )
+        .catch(
+          (err)=>console.log(err)
+        );
+  
+  }
 
+ 
+  
   return (
     <StWrap>
       <StLeftSide>
@@ -33,15 +69,17 @@ export default function LoginModal() {
                 type="text"
                 placeholder="비밀번호를 입력하세요"
                 ref={pw1Ref}
-              />
+              
+            
+            />
               {!signup ? null : (
                 <input type="text" placeholder="비밀번호 한번더" ref={pw2Ref} />
               )}
             </StForm>
             {!signup ? (
-              <StBuuton onClick={() => {}}>로그인</StBuuton>
+              <StBuuton onClick={loginHandler}>로그인</StBuuton>
             ) : (
-              <StBuuton onClick={() => {}}>회원가입</StBuuton>
+              <StBuuton onClick={joinHandler}>회원가입</StBuuton>
             )}
           </div>
         </div>
