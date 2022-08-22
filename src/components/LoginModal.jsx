@@ -43,6 +43,11 @@ export default function LoginModal() {
           token.refreshToken,
           token.refreshTokenExpireDate
         );
+        // setCookie(
+        //   'username',
+        //   res.data.data.username,
+        //   token.refreshTokenExpireDate
+        // );
       })
       .catch((err) => console.log(err));
   };
@@ -69,12 +74,16 @@ export default function LoginModal() {
                 ref={idRef}
               />
               <input
-                type="text"
+                type="password"
                 placeholder="비밀번호를 입력하세요"
                 ref={pw1Ref}
               />
               {!signup ? null : (
-                <input type="text" placeholder="비밀번호 한번더" ref={pw2Ref} />
+                <input
+                  type="password"
+                  placeholder="비밀번호 한번더"
+                  ref={pw2Ref}
+                />
               )}
             </StForm>
             {!signup ? (
