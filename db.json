@@ -29,12 +29,30 @@
     },
     {
       "postId": 4,
-      "title": "글 제목1",
-      "content": "그리고 이 편지를 버리거나 낙서를 해서는 절대로 안됩니다. 7통입니다. 이 편지를 받은 사람은 행운이 깃들것입니다. 힘들겠지만 좋은게 좋다고 생각하세요. 7년의 행운을 빌면서...편지를 보내세요.",
+      "title": "오겡끼데스까",
+      "content": "괴로워요,,,",
       "username": "dorai",
       "profileImageUrl": "https://avatars.githubusercontent.com/u/97497201?v=4",
       "hashtags": ["react", "js"],
       "likeCount": 4
+    },
+    {
+      "postId": 5,
+      "title": "고구려의 흥망성쇠",
+      "content": "고구려 (高句麗, 기원전 37년경 - 668년)는 백제, 신라와 함께 삼국시대의 고대 국가 중 하나이다. 지역적으로는 현재의 만주와 한반도 북부를 지배했던 나라이다. 삼국사기 〈고구려본기〉에 따르면 기원전 37년 주몽이 졸본에 도읍해 국호를 고구려로 한 것이 기원이며, 위서에 따르면 흘승골성(紇升骨城)에 도읍했다 한다. 그러나 동명왕편에 언급된 건국 신화 혹은 그 이후의 여러 가지 정황에 의해, 고구려는 멸망한 고조선 및 부여 출신의 유이민과 그 지역의 토착 세력이 결합해 이뤄진 국가로 추정되는 등, 더 일찍 건국되었을 가능성이 제시되기도 한다.",
+      "username": "jumong",
+      "profileImageUrl": "https://avatars.githubusercontent.com/u/97497201?v=4",
+      "hashtags": ["django", "python"],
+      "likeCount": 5
+    },
+    {
+      "postId": 6,
+      "title": "밥맛이 뚝 떨어져",
+      "content": "그리고 이 편지를 버리거나 낙서를 해서는 절대로 안됩니다. 7통입니다. 이 편지를 받은 사람은 행운이 깃들것입니다. 힘들겠지만 좋은게 좋다고 생각하세요. 7년의 행운을 빌면서...편지를 보내세요.",
+      "username": "siwonshcool",
+      "profileImageUrl": "https://avatars.githubusercontent.com/u/97497201?v=4",
+      "hashtags": ["react", "js"],
+      "likeCount": 6
     }
   ]
 }
