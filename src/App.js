@@ -14,11 +14,10 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/write" element={<Write />} />
         <Route path="/detail/:id" element={<Detail />} />
-        <Route path="/myvelog" element={<MyVelog />} />
-        <Route path="/lists" element={<Lists />} />
         <Route path="/write" element={<Write />} />
+        <Route path="/lists" element={<Lists />} />
+        <Route path="/myvelog" element={<MyVelog />} />
         <Route path="/setting" element={<Setting />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
