@@ -48,6 +48,8 @@ export default function LoginModal() {
         //   res.data.data.username,
         //   token.refreshTokenExpireDate
         // );
+        alert('로그인 성공')
+        window.location.reload(true)
       })
       .catch((err) => console.log(err));
   };
