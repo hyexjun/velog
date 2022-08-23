@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export default function PostCard() {
+export default function PostCard({ data }) {
   return (
     <div className="col">
       <div className="card h-100">
@@ -10,20 +10,19 @@ export default function PostCard() {
           alt="벨로그 로고 이미지"
         />
         <div className="card-body">
-          <h5 className="card-title">글 제목</h5>
-          <StText className="card-text">
-            이 편지는 영국에서 최초로 시작되어 일년에 한바퀴를 돌면서 받는
-            사람에게 행운을 주었고 지금은 당신에게로 옮겨진 이 편지는 4일 안에
-            당신 곁을 떠나야 합니다. 이 편지는 영국에서 최초로 시작되어 일년에
-            한바퀴를 돌면서 받는 사람에게 행운을 주었고 지금은 당신에게로 옮겨진
-            이 편지는 4일 안에 당신 곁을 떠나야 합니다.
-          </StText>
+          <h5 className="card-title">{data.title}</h5>
+          <StText className="card-text">{data.content}</StText>
           <div>며칠 전 • n개의 댓글</div>
         </div>
         <div className="card-footer">
-          <span>프로필</span>
-          <span>by username</span>
-          <span>하트 수</span>
+          <img
+            src={data.profileImageUrl}
+            alt="프로필 사진"
+            // 프로필 사진 크기
+            style={{ width: '25px' }}
+          />
+          <span>by {data.username}</span>
+          <span>❤ {data.likeCount}</span>
         </div>
       </div>
     </div>
