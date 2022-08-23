@@ -66,7 +66,7 @@ const apis = {
 
   // post
   getAllPosts: () => api.get('url'),
-  writePost: (payload) => api.post('url', payload),
+  writePost: (payload) => api.post('/posts', payload),
   getThisPost: (postId) => api.get(`url/${postId}`),
   editPost: (payload) => api.post('url', payload),
   removePost: (payload) => api.post('url', payload),
