@@ -18,14 +18,12 @@ code {
 
 /* 상단 헤더 네비바 관련 css */
 .header-box {
-  width: 100%;
   display: flex;
   align-items: center;
   border: 1px solid rebeccapurple;
 }
 .header-menu {
-  align-items: center;
-  /* 지우면 위아래로 길어짐 */
+  align-items: center; /* 지우면 위아래로 길어짐 */
   border: 1px solid red;
 }
 .header-menu > i {
