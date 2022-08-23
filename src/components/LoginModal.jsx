@@ -19,8 +19,15 @@ export default function LoginModal() {
         password1: pw1,
         password2: pw2,
       })
-      .then((res) => console.log(res));
-    setSignup(false).catch((err) => console.log(err));
+      .then((res) => {
+        console.log(res);
+        alert('회원가입 성공');
+        setSignup(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        alert('회원가입 실패');
+      });
   };
   const loginHandler = () => {
     const id = idRef.current.value;
@@ -48,8 +55,8 @@ export default function LoginModal() {
         //   res.data.data.username,
         //   token.refreshTokenExpireDate
         // );
-        alert('로그인 성공')
-        window.location.reload(true)
+        alert('로그인 성공');
+        window.location.reload(true);
       })
       .catch((err) => console.log(err));
   };
