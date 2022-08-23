@@ -33,7 +33,9 @@ export default function PostCard({ data }) {
                 marginRight: '10px',
               }}
             />
-            <div>by {data.username}</div>
+            <div>
+              by <span style={{ fontWeight: 'bold' }}>{data.username}</span>
+            </div>
           </div>
           <div>❤ {data.likeCount}</div>
         </div>
