@@ -1,18 +1,18 @@
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
-import { Button, Container, Nav, Navbar, Modal } from 'react-bootstrap';
-import LoginModal from './LoginModal';
-import Cookies from 'universal-cookie';
-import { getCookie } from '../shared/Cookie';
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+import { Button, Container, Nav, Navbar, Modal } from "react-bootstrap";
+import LoginModal from "./LoginModal";
+import Cookies from "universal-cookie";
+import { deleteCookie,getCookie } from "../shared/Cookie";
 
 const Header2 = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const view = getCookie("accessToken");
+  const navigate =useNavigate();
 
-  const view = getCookie('accessToken');
-  console.log(view);
   const [isLoggedin, setisLoggedin] = useState(false);
   useEffect(() => {
     if (view !== undefined) {
@@ -21,15 +21,22 @@ const Header2 = () => {
       setisLoggedin(false);
     }
   }, [view]);
+    
+  const LogOut= () => {
+    deleteCookie("accessToken");
+    deleteCookie("refreshToken");
+    alert('로그아웃');
+    window.location.reload()
+  }
+ 
 
-  const navigate = useNavigate();
 
   return (
     <>
       <Navbar collapseOnSelect expand="sm" bg="light" variant="light">
         <Container className="header-box">
           <Nav className="me-auto">
-            <h2 style={{ cursor: 'pointer' }} onClick={() => navigate('/')}>
+            <h2 style={{ cursor: "pointer" }} onClick={() => navigate("/")}>
               velog
             </h2>
           </Nav>
@@ -37,7 +44,7 @@ const Header2 = () => {
             <i className="fa-solid fa-sun" />
             <i className="fa-solid fa-magnifying-glass" />
             {isLoggedin ? (
-              <Button variant="outline-dark" onClick={() => navigate('/write')}>
+              <Button variant="outline-dark" onClick={() => navigate("/write")}>
                 새 글 작성
               </Button>
             ) : (
@@ -53,30 +60,30 @@ const Header2 = () => {
                 >
                   <img
                     alt="프로필 사진"
-                    style={{ width: '45px', borderRadius: '100%' }}
+                    style={{ width: "45px", borderRadius: "100%" }}
                     src="https://velog.velcdn.com/images/hyexjun/profile/108c8f1a-b604-4881-9906-00270be78272/image.jpg"
                   />
                 </div>
                 <ul className="dropdown-menu">
                   <li
                     className="dropdown-item"
-                    onClick={() => navigate('/myvelog')}
+                    onClick={() => navigate("/myvelog")}
                   >
                     내 벨로그
                   </li>
                   <li
                     className="dropdown-item"
-                    onClick={() => navigate('/lists')}
+                    onClick={() => navigate("/lists")}
                   >
                     읽기 목록
                   </li>
                   <li
                     className="dropdown-item"
-                    onClick={() => navigate('/setting')}
+                    onClick={() => navigate("/setting")}
                   >
                     설정
                   </li>
-                  <li className="dropdown-item">로그아웃</li>
+                  <li className="dropdown-item" onClick={LogOut}>로그아웃</li>
                 </ul>
               </li>
             ) : (
