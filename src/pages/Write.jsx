@@ -12,13 +12,14 @@ const Write = () => {
         <StInputTitle value={title} />
         <StCopyTitle />
       </StTitle>
-      <Editor
+      {/* <Editor
         initialValue="hello react editor world!"
         previewStyle="vertical"
         height="600px"
         initialEditType="markdown"
         useCommandShortcut={true}
-      />
+      /> */}
+      <StTextarea name="" id="" cols="30" rows="10"></StTextarea>
       <StSubmitBox>
         <i className="fa-solid fa-arrow-left"> 나가기</i>
         <StPostButton>출간하기</StPostButton>
@@ -37,11 +38,15 @@ const StTitle = styled.div`
 
 const StInputTitle = styled.input`
   width: 50%;
-  height: 50px;
+  height: 10vh;
 `;
-const StCopyTitle = styled.div`
+const StCopyTitle = styled.input`
   width: 50%;
-  height: 50px;
+  height: 10vh;
+`;
+const StTextarea = styled.textarea`
+  width: 50%;
+  height: 70vh;
 `;
 const StSubmitBox = styled.div`
   width: 50%;
