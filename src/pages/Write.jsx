@@ -3,7 +3,7 @@ import { Editor } from '@toast-ui/react-editor';
 import { useState, useRef } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import apis from '../api';
+import apis, { apiJson } from '../api';
 
 const Write = () => {
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ const Write = () => {
     apis
       .writePost({
         title: title,
-        contents: contents,
+        content: contents,
         tags: tags,
       }
       )
