@@ -25,13 +25,14 @@ const Write = () => {
   const WriteHandler = () => {
     const title = titleRef.current.value;
     const contents = contentsRef.current.value;
-    const tags = tagsRef.current.value;
+    const tags = tagList;
     apis
       .writePost({
         title: title,
         contents: contents,
         tags: tags,
-      })
+      }
+      )
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   };
@@ -95,7 +96,7 @@ const Write = () => {
         >
           나가기
         </i>
-        <StPostButton>출간하기</StPostButton>
+        <StPostButton onClick={WriteHandler}>출간하기</StPostButton>
       </StSubmitBox>
     </Layout>
   );
