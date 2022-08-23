@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import PostCard from '../components/PostCard';
+import axios from 'axios';
 
 const Main = () => {
+  const [posts, setPosts] = useState([]);
+  const getAllPosts = async () => {
+    // const res = await axios.get('http://localhost:3030/posts')
+    // console.log('All Posts', res.data);
+    const { data } = await axios.get('http://localhost:3030/posts');
+    console.log('All Posts', data);
+    setPosts(data);
+  };
+  useEffect(() => {
+    getAllPosts();
+  }, []);
+
   return (
     <Layout>
       <div className="top-section">
@@ -16,12 +29,9 @@ const Main = () => {
         </div>
       </div>
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5 g-4">
-        <PostCard />
-        <PostCard />
-        <PostCard />
-        <PostCard />
-        <PostCard />
-        <PostCard />
+        {posts.map((data) => (
+          <PostCard key={data.postId} data={data} />
+        ))}
       </div>
     </Layout>
   );
