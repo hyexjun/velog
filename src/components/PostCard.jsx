@@ -18,6 +18,7 @@ export default function PostCard() {
             한바퀴를 돌면서 받는 사람에게 행운을 주었고 지금은 당신에게로 옮겨진
             이 편지는 4일 안에 당신 곁을 떠나야 합니다.
           </StText>
+          <div>며칠 전 • n개의 댓글</div>
         </div>
         <div className="card-footer">
           <span>프로필</span>
@@ -32,6 +33,9 @@ export default function PostCard() {
 const StText = styled.p`
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
-  word-break: break-all;
+  /* white-space: nowrap;
+  word-break: break-all; */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 `;
