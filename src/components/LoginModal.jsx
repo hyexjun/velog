@@ -56,7 +56,7 @@ export default function LoginModal() {
     <StWrap>
       <StLeftSide>
         <img
-          style={{ width: '200px' }}
+          style={{ width: '75%' }}
           src="https://static.velog.io/static/media/undraw_joyride_hnno.fae6b95e.svg"
           alt="welcome"
         />
@@ -148,7 +148,7 @@ const StRightSide = styled.div`
 `;
 
 const StForm = styled.div`
-  width: 300px;
+  width: 70%;
   display: flex;
   flex-direction: column;
 `;
