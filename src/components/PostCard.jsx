@@ -14,15 +14,28 @@ export default function PostCard({ data }) {
           <StText className="card-text">{data.content}</StText>
           <div>며칠 전 • n개의 댓글</div>
         </div>
-        <div className="card-footer">
-          <img
-            src={data.profileImageUrl}
-            alt="프로필 사진"
-            // 프로필 사진 크기
-            style={{ width: '25px' }}
-          />
-          <span>by {data.username}</span>
-          <span>❤ {data.likeCount}</span>
+        <div
+          className="card-footer"
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <img
+              src={data.profileImageUrl}
+              alt="프로필 사진"
+              // 프로필 사진 크기
+              style={{
+                width: '30px',
+                borderRadius: '100%',
+                marginRight: '10px',
+              }}
+            />
+            <div>by {data.username}</div>
+          </div>
+          <div>❤ {data.likeCount}</div>
         </div>
       </div>
     </div>
