@@ -48,30 +48,30 @@ const Write = () => {
   };
   return (
     <Layout>
-      <StTitle>
-        <StInputTitle placeholder="제목을 적어주세요" ref={titleRef} />
-        <div>
-          <input
-            type="text"
-            onKeyUp={EnterKeyInput}
-            ref={tagsRef}
-            onChange={SubmitHandler}
-          />
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-            {tagList.map((tag) => (
-              <div
-                style={{
-                  background: 'orange',
-                  border: 'none',
-                  borderRadius: '2px',
-                }}
-              >
-                {tag}
-              </div>
-            ))}
-          </div>
+      <StTitleInput placeholder="제목을 입력하세요" ref={titleRef} />
+      <div>
+        <StTagInput
+          type="text"
+          placeholder="태그를 입력하세요"
+          onKeyUp={EnterKeyInput}
+          ref={tagsRef}
+          onChange={SubmitHandler}
+        />
+        <div style={{ display: 'flex', gap: '3px' }}>
+          {tagList.map((tag, idx) => (
+            <div
+              key={idx}
+              style={{
+                background: 'orange',
+                border: 'none',
+                borderRadius: '2px',
+              }}
+            >
+              {tag}
+            </div>
+          ))}
         </div>
-      </StTitle>
+      </div>
       {/* <Editor
         initialValue="hello react editor world!"
         previewStyle="vertical"
@@ -93,7 +93,6 @@ const Write = () => {
           onClick={Exit}
           style={{ cursor: 'pointer' }}
         >
-          {' '}
           나가기
         </i>
         <StPostButton>출간하기</StPostButton>
@@ -102,21 +101,27 @@ const Write = () => {
   );
 };
 const Layout = styled.div`
-  margin: 0 5%;
-`;
-const StTitle = styled.div`
+  margin: 1% 5%;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red
 `;
-const StInputTitle = styled.input`
-  width: 50%;
-  height: 10vh;
+const StTitleInput = styled.input`
+  width: 80%;
+  height: 7vh;
+`;
+const StTagInput = styled.input`
+  width: 80%;
+  height: 5vh;
 `;
 const StTextarea = styled.textarea`
-  width: 50%;
-  height: 70vh;
+  width: 80%;
+  height: 50vh;
 `;
 const StSubmitBox = styled.div`
-  width: 50%;
+  width: 80%;
   height: 50px;
   display: flex;
   justify-content: space-between;
