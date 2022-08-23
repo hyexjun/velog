@@ -4,15 +4,22 @@ export default function PostCard({ data }) {
   return (
     <div className="col">
       <div className="card h-100">
-        <img
-          src="https://images.velog.io/images/kim-mg/post/b6928585-e245-4e5f-b878-0bbf278e5886/velog_logo.png"
-          className="card-img-top"
-          alt="벨로그 로고 이미지"
-        />
+        {data.imageUrl ? (
+          <img src={data.imageUrl} className="card-img-top" alt="" />
+        ) : null}
         <div className="card-body">
           <h5 className="card-title">{data.title}</h5>
           <StText className="card-text">{data.content}</StText>
-          <div>며칠 전 • n개의 댓글</div>
+        </div>
+        <div
+          style={{
+            margin: '-50px 15px 10px 15px',
+            // border: '1px solid green',
+            fontSize: '12px',
+            color: 'grey'
+          }}
+        >
+          며칠 전 • n개의 댓글
         </div>
         <div
           className="card-footer"
@@ -52,4 +59,5 @@ const StText = styled.p`
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  /* border: 1px solid red; */
 `;
