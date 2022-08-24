@@ -15,6 +15,7 @@ const Write = () => {
   // const tags=tagsRef.current.value;
 
   const [tagList, setTagList] = useState([]);
+  const [newTag,setNewTag]=useState(tagList)
 
   // const SubmitHandler = () => {
   //   const tags = tagsRef.current.value;
@@ -43,6 +44,16 @@ const Write = () => {
       tagsRef.current.value = '';
     }
   };
+
+//삭제 기능
+    const DelTag = (e) => {
+      const newTags = newTag.filter((idx) => {
+        return idx !== e;
+      }); setTagList(newTags);
+    };
+
+
+
   const Exit = () => {
     navigate('/');
   };
@@ -76,7 +87,7 @@ const Write = () => {
               height: '35px',
               padding: '5px 15px',
             }}
-          >
+            onClick={DelTag}>
             {tag}
           </div>
         ))}
