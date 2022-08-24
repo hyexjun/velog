@@ -3,7 +3,8 @@ import { Editor } from '@toast-ui/react-editor';
 import { useState, useRef } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import apis, { apiJson } from '../api';
+import apis from '../api/index';
+import { Form } from 'react-bootstrap';
 
 const Write = () => {
   const navigate = useNavigate();
@@ -57,16 +58,7 @@ const Write = () => {
         onKeyUp={EnterKeyInput}
         ref={tagsRef}
       />
-      <div
-        style={{
-          display: 'flex',
-          gap: '5px',
-          // border: '1px solid blue',
-          height: '5vh',
-          alignItems: 'center',
-          color: '#12b886',
-        }}
-      >
+      <StTagBox>
         {tagList.map((tag, idx) => (
           <div
             key={idx}
@@ -82,7 +74,7 @@ const Write = () => {
             {tag}
           </div>
         ))}
-      </div>
+      </StTagBox>
 
       {/* <Editor
         initialValue="hello react editor world!"
@@ -99,6 +91,10 @@ const Write = () => {
         placeholder="내용을 적어주세요"
         ref={contentsRef}
       ></StTextarea>
+      {/* <Form.Group controlId="formFileMultiple" className="mb-3"> */}
+      {/* <Form.Label>사진추가,,</Form.Label> */}
+      <Form.Control type="file" multiple style={{ border: '1px solid #eee' }} />
+      {/* </Form.Group> */}
       <StSubmitBox>
         <i
           className="fa-solid fa-arrow-left"
@@ -124,17 +120,32 @@ const Layout = styled.div`
 const StTitleInput = styled.input`
   width: 100%;
   height: 7vh;
-  border: none;
+  /* border: none; */
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding-left: 10px;
 `;
 const StTagInput = styled.input`
   width: 100%;
   height: 5vh;
-  border: none;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding-left: 10px;
+`;
+const StTagBox = styled.div`
+  display: flex;
+  gap: 5px;
+  width: 100%;
+  height: 5vh;
+  align-items: center;
+  color: #12b886;
 `;
 const StTextarea = styled.textarea`
   width: 100%;
   height: 50vh;
-  border: none;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 10px;
 `;
 const StSubmitBox = styled.div`
   width: 100%;
