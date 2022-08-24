@@ -58,7 +58,10 @@ export default function LoginModal() {
         alert('로그인 성공');
         window.location.reload(true);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err)
+        alert('로그인 실패')
+      });
   };
 
   return (
