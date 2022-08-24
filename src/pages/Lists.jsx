@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
 import PostCard from '../components/PostCard';
+import { Layout } from './Main';
 import axios from 'axios';
 
 const Main = () => {
@@ -30,10 +30,5 @@ const Main = () => {
     </Layout>
   );
 };
-
-export const Layout = styled.div`
-  margin: 1% 5%;
-  /* border: 1px solid red; */
-`;
 
 export default Main;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { Layout } from './Main';
 
 const Setting = () => {
   return (
@@ -40,9 +40,5 @@ const Setting = () => {
     </Layout>
   );
 };
-
-const Layout = styled.div`
-  margin: 3% 10%;
-`;
 
 export default Setting;

@@ -71,7 +71,7 @@ const Write = () => {
           <div
             key={idx}
             style={{
-              background: '#e0e0e0',
+              background: '#eee',
               border: 'none',
               borderRadius: '20px',
               height: '35px',

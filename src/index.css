@@ -65,7 +65,7 @@ code {
 
 /* 설정 페이지 */
 .wrap {
-  margin: 0 auto;
+  margin: 50px auto;
   max-width: 800px;
 }
 .setting-top {

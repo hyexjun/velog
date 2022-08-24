@@ -66,8 +66,7 @@ export default function PostCard({ data }) {
 const StText = styled.p`
   overflow: hidden;
   text-overflow: ellipsis;
-  /* white-space: nowrap;
-  word-break: break-all; */
+  text-align: justify;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
