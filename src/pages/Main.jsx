@@ -39,7 +39,7 @@ const Main = () => {
 
 export const Layout = styled.div`
   margin: 1% 5%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 `;
 
 export default Main;
