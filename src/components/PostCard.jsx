@@ -16,7 +16,7 @@ export default function PostCard({ data }) {
             margin: '-50px 15px 10px 15px',
             // border: '1px solid green',
             fontSize: '12px',
-            color: 'grey'
+            color: 'grey',
           }}
         >
           며칠 전 • n개의 댓글
@@ -35,7 +35,7 @@ export default function PostCard({ data }) {
               alt="프로필 사진"
               // 프로필 사진 크기
               style={{
-                width: '30px',
+                width: '45px',
                 borderRadius: '100%',
                 marginRight: '10px',
               }}
@@ -44,7 +44,11 @@ export default function PostCard({ data }) {
               by <span style={{ fontWeight: 'bold' }}>{data.username}</span>
             </div>
           </div>
-          <div>❤ {data.likeCount}</div>
+          <div
+          // style={{ border: '1px solid blue' }}
+          >
+            ❤ {data.likeCount}
+          </div>
         </div>
       </div>
     </div>
