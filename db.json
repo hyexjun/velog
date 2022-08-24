@@ -8,7 +8,7 @@
       "imageUrl":"https://velog.velcdn.com/images/hyunjine/post/23d02a32-ce73-4b4f-b6b5-6b60d0fbcd2c/image.png",
       "profileImageUrl": "https://avatars.githubusercontent.com/u/97497201?v=4",
       "hashtags": ["react", "js"],
-      "likeCount": 1
+      "likeCount": 9
     },
     {
       "postId": 2,
@@ -18,7 +18,7 @@
       "imageUrl":"https://velog.velcdn.com/images/jay/post/3b6f3704-8416-447d-adce-fd44a9c7eb5c/image.png",
       "profileImageUrl": "https://avatars.githubusercontent.com/u/97497201?v=4",
       "hashtags": ["react", "spring"],
-      "likeCount": 2
+      "likeCount": 33
     },
     {
       "postId": 3,
@@ -28,7 +28,7 @@
       "imageUrl":"https://velog.velcdn.com/images/surim014/post/4bdc166a-0710-41b4-9aff-e74eeeea5781/image.png",
       "profileImageUrl": "https://avatars.githubusercontent.com/u/97497201?v=4",
       "hashtags": ["spring", "node.js"],
-      "likeCount": 3
+      "likeCount": 2
     },
     {
       "postId": 4,
@@ -38,7 +38,7 @@
       "imageUrl":"",
       "profileImageUrl": "https://avatars.githubusercontent.com/u/97497201?v=4",
       "hashtags": ["react", "js"],
-      "likeCount": 4
+      "likeCount": 41
     },
     {
       "postId": 5,
@@ -48,7 +48,7 @@
       "imageUrl":"https://velog.velcdn.com/images/injoon2019/post/eac78418-3e49-44a9-a1dc-3aaa643a8151/image.png",
       "profileImageUrl": "https://avatars.githubusercontent.com/u/97497201?v=4",
       "hashtags": ["django", "python"],
-      "likeCount": 5
+      "likeCount": 126
     },
     {
       "postId": 6,
@@ -58,7 +58,7 @@
       "imageUrl":"https://velog.velcdn.com/images/minseojo/post/6d345e14-4ea1-4c5f-8903-852627514512/image.PNG",
       "profileImageUrl": "https://avatars.githubusercontent.com/u/97497201?v=4",
       "hashtags": ["react", "js"],
-      "likeCount": 6
+      "likeCount": 74
     }
   ]
 }
