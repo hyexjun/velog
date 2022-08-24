@@ -3,32 +3,34 @@ import { Editor } from '@toast-ui/react-editor';
 import { useState, useRef } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import apis from '../api/index';
-import { Form } from 'react-bootstrap';
+import apis, {apiForm} from '../api';
 
 const Write = () => {
   const navigate = useNavigate();
   const titleRef = useRef();
   const contentsRef = useRef();
   const tagsRef = useRef();
-
+  const imgRef=useRef();
   const [tagList, setTagList] = useState([]);
-  const [newTag, setNewTag] = useState(tagList);
+
+ 
+   
 
   // 출간하기 실행 시 api 호출
-  const WriteHandler = () => {
-    const title = titleRef.current.value;
-    const contents = contentsRef.current.value;
-    const tags = tagList;
-    apis
-      .writePost({
-        title: title,
-        content: contents,
-        tags: tags,
-      })
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
-  };
+  // const WriteHandler = () => {
+  //   const title = titleRef.current.value;
+  //   const contents = contentsRef.current.value;
+  //   const tags = tagList;
+  
+  //   apis
+  //     .writePost({
+  //       title: title,
+  //       content: contents,
+  //       tags: tags,
+  //     })
+  //     .then((res) => console.log(res))
+  //     .catch((err) => console.log(err));
+  // };
 
   //엔터키 입력 확인하는 함수
   const EnterKeyInput = () => {
@@ -38,10 +40,25 @@ const Write = () => {
     }
   };
 
+   
+ 
+  const onChange=()=>{
+      const formData = new FormData();
+      apiForm
+      .writePost({
+          title: formData.append('title',titleRef.current.value),
+          content: formData.append('content',contentsRef.current.value),
+          imageFiles : formData.append('imageFiles',imgRef.current.files[0]),
+          tags: formData.append('tags',tagList)
+      })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
+
   //삭제 기능
-  const DelTag = (e) => {
-    const newTags = newTag.filter((idx) => {
-      return idx !== e;
+  const DelTag = (idxx) => {
+    const newTags = tagList.filter((item,idx) => {
+      return idx !== idxx;
     });
     setTagList(newTags);
   };
@@ -58,7 +75,16 @@ const Write = () => {
         onKeyUp={EnterKeyInput}
         ref={tagsRef}
       />
-      <StTagBox>
+      <div
+        style={{
+          display: 'flex',
+          gap: '5px',
+          // border: '1px solid blue',
+          height: '5vh',
+          alignItems: 'center',
+          color: '#12b886',
+        }}
+      >
         {tagList.map((tag, idx) => (
           <div
             key={idx}
@@ -69,12 +95,13 @@ const Write = () => {
               height: '35px',
               padding: '5px 15px',
             }}
-            onClick={DelTag}
+            onClick={()=>DelTag(idx)}
           >
             {tag}
           </div>
         ))}
-      </StTagBox>
+      </div>
+      <input></input>
 
       {/* <Editor
         initialValue="hello react editor world!"
@@ -91,10 +118,6 @@ const Write = () => {
         placeholder="내용을 적어주세요"
         ref={contentsRef}
       ></StTextarea>
-      {/* <Form.Group controlId="formFileMultiple" className="mb-3"> */}
-      {/* <Form.Label>사진추가,,</Form.Label> */}
-      <Form.Control type="file" multiple style={{ border: '1px solid #eee' }} />
-      {/* </Form.Group> */}
       <StSubmitBox>
         <i
           className="fa-solid fa-arrow-left"
@@ -103,7 +126,7 @@ const Write = () => {
         >
           나가기
         </i>
-        <StPostButton onClick={WriteHandler}>출간하기</StPostButton>
+        <StPostButton onClick={onChange}>출간하기</StPostButton>
       </StSubmitBox>
     </Layout>
   );
@@ -120,32 +143,17 @@ const Layout = styled.div`
 const StTitleInput = styled.input`
   width: 100%;
   height: 7vh;
-  /* border: none; */
-  border: 1px solid #eee;
-  border-radius: 5px;
-  padding-left: 10px;
+  border: none;
 `;
 const StTagInput = styled.input`
   width: 100%;
   height: 5vh;
-  border: 1px solid #eee;
-  border-radius: 5px;
-  padding-left: 10px;
-`;
-const StTagBox = styled.div`
-  display: flex;
-  gap: 5px;
-  width: 100%;
-  height: 5vh;
-  align-items: center;
-  color: #12b886;
+  border: none;
 `;
 const StTextarea = styled.textarea`
   width: 100%;
   height: 50vh;
-  border: 1px solid #eee;
-  border-radius: 5px;
-  padding: 10px;
+  border: none;
 `;
 const StSubmitBox = styled.div`
   width: 100%;
