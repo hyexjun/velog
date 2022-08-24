@@ -16,7 +16,7 @@ export default function PostCard({ data }) {
           <img src={data.imageUrl} className="card-img-top" alt="" />
         ) : null}
         <div className="card-body">
-          <h5 className="card-title">{data.title}</h5>
+          <StTitle className="card-title">{data.title}</StTitle>
           <StText className="card-text">{data.content}</StText>
         </div>
         <div
@@ -63,10 +63,20 @@ export default function PostCard({ data }) {
   );
 }
 
+const StTitle = styled.div`
+  font-size: 17px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+`;
+
 const StText = styled.p`
   overflow: hidden;
   text-overflow: ellipsis;
-  text-align: justify;
+  /* text-align: justify; */
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
