@@ -1,8 +1,16 @@
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 export default function PostCard({ data }) {
+  const navigate = useNavigate();
+
   return (
-    <div className="col">
+    <div
+      className="col"
+      onClick={() => {
+        navigate(`/detail/${data.postId}`);
+      }}
+    >
       <div className="card h-100">
         {data.imageUrl ? (
           <img src={data.imageUrl} className="card-img-top" alt="" />
