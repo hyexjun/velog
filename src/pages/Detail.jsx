@@ -24,9 +24,11 @@ export default function Detail() {
   return (
     <Layout>
       <StContentBox>
-        <h1>제목</h1>
+        <h1>행운의 편지</h1>
         <StWriterInfo>
-          <div>tester</div>•<div>약 19시간 전</div>
+          <span style={{ marginRight: '5px' }}>tester</span>
+          <span style={{ marginRight: '5px' }}>•</span>
+          <span>약 19시간 전</span>
         </StWriterInfo>
         <StTagBox>
           {tagList.map((tag, idx) => (
@@ -66,7 +68,7 @@ const StContentBox = styled.div`
 `;
 
 const StWriterInfo = styled.div`
-  display: flex;
+  /* display: flex; */
 `;
 
 const StTagBox = styled.div`
@@ -88,4 +90,4 @@ const StTagList = styled.div`
 const StText = styled.div`
   /* border: 1px solid red; */
   margin: 20px 0;
-`
+`;
