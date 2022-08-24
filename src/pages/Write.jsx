@@ -10,17 +10,9 @@ const Write = () => {
   const titleRef = useRef();
   const contentsRef = useRef();
   const tagsRef = useRef();
-  // const title=titleRef.current.value;
-  // const contents=contentsRef.current.value;
-  // const tags=tagsRef.current.value;
 
   const [tagList, setTagList] = useState([]);
-  const [newTag,setNewTag]=useState(tagList)
-
-  // const SubmitHandler = () => {
-  //   const tags = tagsRef.current.value;
-  //   console.log(tags);
-  // };
+  const [newTag, setNewTag] = useState(tagList);
 
   // 출간하기 실행 시 api 호출
   const WriteHandler = () => {
@@ -45,14 +37,13 @@ const Write = () => {
     }
   };
 
-//삭제 기능
-    const DelTag = (e) => {
-      const newTags = newTag.filter((idx) => {
-        return idx !== e;
-      }); setTagList(newTags);
-    };
-
-
+  //삭제 기능
+  const DelTag = (e) => {
+    const newTags = newTag.filter((idx) => {
+      return idx !== e;
+    });
+    setTagList(newTags);
+  };
 
   const Exit = () => {
     navigate('/');
@@ -65,7 +56,6 @@ const Write = () => {
         placeholder="태그를 입력하세요"
         onKeyUp={EnterKeyInput}
         ref={tagsRef}
-        // onChange={SubmitHandler}
       />
       <div
         style={{
@@ -87,7 +77,8 @@ const Write = () => {
               height: '35px',
               padding: '5px 15px',
             }}
-            onClick={DelTag}>
+            onClick={DelTag}
+          >
             {tag}
           </div>
         ))}
