@@ -12,8 +12,22 @@ const Write = () => {
   const tagsRef = useRef();
   const imgRef=useRef();
   const [tagList, setTagList] = useState([]);
+  const [imgFile,setImgFile]= useState();
+  // const [attachment, setAttachment] = useState()
 
- 
+  // const onFileChange = (event) => {
+  //   // const {
+  //   // target: { files },
+  //   // } = event;
+  //   const theFile = event.target.files[0];
+  //   const reader = new FileReader();
+  //   reader.onloadend = (finishedEvent) => {
+  //   const result = finishedEvent.currentTarget.result;
+  //   setAttachment(result);
+  //   };
+  //   reader.readAsDataURL(theFile);
+  //   };
+    
    
 
   // 출간하기 실행 시 api 호출
@@ -40,17 +54,21 @@ const Write = () => {
     }
   };
 
-   
+  const onFileChange=(e)=>{
+    setImgFile(e.target.files[0]);
+
+  }
  
+
   const onChange=()=>{
       const formData = new FormData();
-      apiForm
-      .writePost({
-          title: formData.append('title',titleRef.current.value),
-          content: formData.append('content',contentsRef.current.value),
-          imageFiles : formData.append('imageFiles',imgRef.current.files[0]),
-          tags: formData.append('tags',tagList)
-      })
+      // const newPost = { title:titleRef.current.value, content: contentsRef.current.value, imageFiles: [attachment],tags:tagList };
+      formData.append('title' , titleRef.current.value,);
+      formData.append('content',contentsRef.current.value);
+      formData.append('imageFiles',imgRef.current.files[0]);
+      formData.append('tags',tagList );
+      apis
+      .writePost(formData)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   };
@@ -101,8 +119,9 @@ const Write = () => {
           </div>
         ))}
       </div>
-      <input></input>
-
+      <form encType='multipart/form-data'>
+      <input  multiple="multiple" type='file'  accept='image/*' ref={imgRef} onChange={(e)=>onFileChange(e)} />
+      </form>
       {/* <Editor
         initialValue="hello react editor world!"
         previewStyle="vertical"
