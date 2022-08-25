@@ -8,7 +8,6 @@ import apis from '../api';
 import { useNavigate, useParams } from 'react-router-dom';
 
 export default function Detail() {
-
   const { id } = useParams();
   const [post, setPost] = useState([]);
   const [tags, setTags] = useState([]);
@@ -70,9 +69,9 @@ export default function Detail() {
         </StTagBox>
         <StImage src={post.imageUrls} alt="" />
         <StText>{post.content}</StText>
-       <StButtonBox>
-          {id===params?(<> <StButton>수정</StButton>
-          <StButton onClick={DeletePost}>삭제</StButton></>):(null)}
+        <StButtonBox>
+          {/* <StButton>수정</StButton> */}
+          <StButton onClick={DeletePost}>삭제</StButton>
         </StButtonBox>
       </StContentBox>
 
