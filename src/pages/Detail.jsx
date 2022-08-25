@@ -52,6 +52,10 @@ export default function Detail() {
           받은 사람은 행운이 깃들것입니다. 힘들겠지만 좋은게 좋다고 생각하세요.
           7년의 행운을 빌면서...편지를 보내세요.
         </StText>
+        <StButtonBox>
+          <StButton>수정</StButton>
+          <StButton>삭제</StButton>
+        </StButtonBox>
       </StContentBox>
 
       <ProfileCard />
@@ -64,7 +68,7 @@ const StContentBox = styled.div`
   max-width: 700px;
   margin: 80px auto;
   text-align: justify;
-  /* border: 1px solid black; */
+  border: 1px solid black;
 `;
 
 const StWriterInfo = styled.div`
@@ -90,4 +94,18 @@ const StTagList = styled.div`
 const StText = styled.div`
   /* border: 1px solid red; */
   margin: 20px 0;
+`;
+
+const StButtonBox = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
+
+const StButton = styled.button`
+  border: none;
+  border-radius: 5px;
+  background: #12b886;
+  color: #eeeeee;
+  padding: 5px 15px;
+  font-weight: 600;
 `;

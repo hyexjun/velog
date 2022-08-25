@@ -3,7 +3,7 @@ import { Editor } from '@toast-ui/react-editor';
 import { useState, useRef } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import apis from '../api';
+import apis from '../api/index';
 import Form from 'react-bootstrap/Form';
 
 const Write = () => {
@@ -14,26 +14,26 @@ const Write = () => {
   const imgRef = useRef();
   const [tagList, setTagList] = useState([]);
   const [imgFile, setImgFile] = useState();
-  // const [attachment, setAttachment] = useState()
+
+  // const [attachment, setAttachment] = useState();
   // const onFileChange = (event) => {
-  //   // const {
-  //   // target: { files },
-  //   // } = event;
+  //   const {
+  //     target: { files },
+  //   } = event;
   //   const theFile = event.target.files[0];
   //   const reader = new FileReader();
   //   reader.onloadend = (finishedEvent) => {
-  //   const result = finishedEvent.currentTarget.result;
-  //   setAttachment(result);
+  //     const result = finishedEvent.currentTarget.result;
+  //     setAttachment(result);
   //   };
   //   reader.readAsDataURL(theFile);
-  //   };
+  // };
 
   // 출간하기 실행 시 api 호출
   // const WriteHandler = () => {
   //   const title = titleRef.current.value;
   //   const contents = contentsRef.current.value;
   //   const tags = tagList;
-
   //   apis
   //     .writePost({
   //       title: title,

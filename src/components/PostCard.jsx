@@ -12,8 +12,8 @@ export default function PostCard({ data }) {
       }}
     >
       <div className="card h-100">
-        {data.imageUrl ? (
-          <img src={data.imageUrl} className="card-img-top" alt="" />
+        {data.thumbnailUrl ? (
+          <img src={data.thumbnailUrl} className="card-img-top" alt="" />
         ) : null}
         <div className="card-body">
           <StTitle className="card-title">{data.title}</StTitle>

@@ -2,19 +2,30 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import PostCard from '../components/PostCard';
 import axios from 'axios';
+import apis from '../api';
 
 const Main = () => {
   const [posts, setPosts] = useState([]);
-  const getAllPosts = async () => {
+  const getAllPostsFromMock = async () => {
     // const res = await axios.get('http://localhost:3030/posts')
     // console.log('All Posts', res.data);
     const { data } = await axios.get('http://localhost:3030/posts');
     console.log('All Posts', data);
     setPosts(data);
   };
+
   useEffect(() => {
-    getAllPosts();
+    // getAllPostsFromMock();
+    showAll();
   }, []);
+
+  const showAll = () => {
+    apis.getAllPosts().then((res) => {
+      const data = res?.data?.content;
+      console.log('server data', data);
+      setPosts(data);
+    });
+  };
 
   return (
     <Layout>
