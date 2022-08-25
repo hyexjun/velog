@@ -82,7 +82,7 @@ const apis = {
   writePost: (payload) => apiForm.post('/posts', payload),
   getThisPost: (postId) => api.get(`posts/${postId}`),
   editPost: (payload) => api.post('url', payload),
-  removePost: (payload) => api.post('url', payload),
+  removePost: (postId) => api.delete(`posts/${postId}`),
 };
 
 export default apis;
