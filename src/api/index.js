@@ -80,7 +80,7 @@ const apis = {
   // post
   getAllPosts: () => api.get('/posts'),
   writePost: (payload) => apiForm.post('/posts', payload),
-  getThisPost: (postId) => api.get(`url/${postId}`),
+  getThisPost: (postId) => api.get(`posts/${postId}`),
   editPost: (payload) => api.post('url', payload),
   removePost: (payload) => api.post('url', payload),
 };

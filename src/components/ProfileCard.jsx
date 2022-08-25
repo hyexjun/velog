@@ -1,4 +1,4 @@
-const ProfileCard = () => {
+const ProfileCard = ({user}) => {
   return (
     <>
       <div
@@ -21,8 +21,8 @@ const ProfileCard = () => {
             margin: '20px',
           }}
         >
-          <h3>hyexjun</h3>
-          <p>자기소개</p>
+          <h3>{user}</h3>
+          <p>안녕하세요 벨로그,, 벨로그..?</p>
         </div>
       </div>
       <hr style={{ maxWidth: '700px', margin: '20px auto' }} />

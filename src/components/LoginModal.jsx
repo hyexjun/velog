@@ -136,13 +136,13 @@ export default function LoginModal() {
 }
 
 const StWrap = styled.div`
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   height: 60vh;
 `;
 
 const StLeftSide = styled.div`
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   width: 35%;
   display: flex;
   flex-direction: column;
@@ -151,7 +151,7 @@ const StLeftSide = styled.div`
 `;
 
 const StRightSide = styled.div`
-  border: 1px solid green;
+  /* border: 1px solid green; */
   width: 65%;
   display: flex;
   flex-direction: column;

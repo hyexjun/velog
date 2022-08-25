@@ -55,7 +55,8 @@ export default function PostCard({ data }) {
           <div
           // style={{ border: '1px solid blue' }}
           >
-            ❤ {data.likeCount}
+            {/* ❤ {data.likeCount} */}
+            ❤ {Math.floor(Math.random() * 100)}
           </div>
         </div>
       </div>
