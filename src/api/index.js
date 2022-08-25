@@ -26,6 +26,8 @@ export const apiForm = axios.create({
   },
 });
 
+
+
 // 2. request interceptor
 // 인증이 필요한 요청을 중간에 가로채서 헤더에 토큰 소매넣기 해주기
 
@@ -44,6 +46,22 @@ api.interceptors.request.use(
     console.log(error);
   }
 );
+
+
+apiForm.interceptors.request.use(
+  (config) => {
+    const accessToken = getCookie('accessToken');
+    const refreshToken = getCookie('refreshToken');
+    config.headers['Authorization'] = `Bearer ${accessToken}`;
+    config.headers['Refresh-token'] = refreshToken;
+    return config;
+  },
+  (error) => {
+    console.log(error);
+  }
+);
+
+
 
 // 3. response interceptor // Q. 어떤 경우에 쓰이는지?
 api.interceptors.response.use(
@@ -66,7 +84,7 @@ const apis = {
 
   // post
   getAllPosts: () => api.get('url'),
-  writePost: (payload) => api.post('/posts', payload),
+  writePost: (payload) => apiForm.post('/posts', payload),
   getThisPost: (postId) => api.get(`url/${postId}`),
   editPost: (payload) => api.post('url', payload),
   removePost: (payload) => api.post('url', payload),
