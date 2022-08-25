@@ -11,8 +11,8 @@ export default function LoginModal() {
 
   const joinHandler = () => {
     const id = idRef.current.value;
-    const pw1 = idRef.current.value;
-    const pw2 = idRef.current.value;
+    const pw1 = pw1Ref.current.value;
+    const pw2 = pw2Ref.current.value;
     apis
       .registerUser({
         username: id,
@@ -31,7 +31,7 @@ export default function LoginModal() {
   };
   const loginHandler = () => {
     const id = idRef.current.value;
-    const pw1 = idRef.current.value;
+    const pw1 = pw1Ref.current.value;
     apis
       .loginUser({
         username: id,

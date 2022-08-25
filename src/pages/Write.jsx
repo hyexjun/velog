@@ -68,7 +68,9 @@ const Write = () => {
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
     alert('포스팅 완료')
-    window.location.replace('/')
+    // navigate('/')
+    // window.location.reload(true)
+    window.onslotchange.replace('/')
   };
 
   //삭제 기능

@@ -5,15 +5,16 @@ import CommentList from '../components/CommentList';
 import ProfileCard from '../components/ProfileCard';
 import { Layout } from './Main';
 import apis from '../api';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 export default function Detail() {
   const { id } = useParams();
   const [post, setPost] = useState([]);
   const [tags, setTags] = useState([]);
   const [user, setUser] = useState();
-  const params =useParams();
-  console.log(params)
+  const params = useParams();
+  const navigate = useNavigate();
+
   const getAllPostsFromMock = async () => {
     // const res = await axios.get('http://localhost:3030/posts')
     // console.log('All Posts', res.data);
@@ -36,14 +37,16 @@ export default function Detail() {
       setUser(data.username);
     });
   };
-  const DeletePost =()=>{
+  const DeletePost = () => {
+    console.log(params.id);
 
-    console.log(params.id)
-
-    apis.removePost(params.id).then((res) => console.log(res)).catch((err) => console.log(err));
-    
-    // window.location.replace('/')
-  }
+    apis
+      .removePost(params.id)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+    // navigate('/');
+    window.location.replace('/');
+  };
 
   return (
     <Layout>
@@ -102,7 +105,7 @@ const StTagList = styled.div`
 
 const StImage = styled.img`
   width: 100%;
-`
+`;
 
 const StText = styled.div`
   /* border: 1px solid red; */
