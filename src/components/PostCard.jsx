@@ -15,6 +15,9 @@ export default function PostCard({ data }) {
         {data.thumbnailUrl ? (
           <img src={data.thumbnailUrl} className="card-img-top" alt="" />
         ) : null}
+        {data.imageUrl ? (
+          <img src={data.imageUrl} className="card-img-top" alt="" />
+        ) : null}
         <div className="card-body">
           <StTitle className="card-title">{data.title}</StTitle>
           <StText className="card-text">{data.content}</StText>
@@ -55,8 +58,7 @@ export default function PostCard({ data }) {
           <div
           // style={{ border: '1px solid blue' }}
           >
-            {/* ❤ {data.likeCount} */}
-            ❤ {Math.floor(Math.random() * 100)}
+            {/* ❤ {data.likeCount} */}❤ {Math.floor(Math.random() * 100)}
           </div>
         </div>
       </div>

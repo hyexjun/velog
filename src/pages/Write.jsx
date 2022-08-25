@@ -67,6 +67,8 @@ const Write = () => {
       .writePost(formData)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
+    alert('포스팅 완료')
+    window.location.replace('/')
   };
 
   //삭제 기능
