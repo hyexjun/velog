@@ -26,7 +26,8 @@ const Header2 = () => {
     deleteCookie('accessToken');
     deleteCookie('refreshToken');
     alert('로그아웃');
-    window.location.reload();
+    // navigate('/')
+    window.location.replace('/');
   };
 
   return (
