@@ -42,10 +42,15 @@ export default function Detail() {
 
     apis
       .removePost(params.id)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+      .then((res) => {
+        console.log(res);
+        window.location.replace('/');
+      })
+      .catch((err) => {
+        console.log(err);
+        alert('타인의 게시글은 삭제가 안 됩니다 :)');
+      });
     // navigate('/');
-    window.location.replace('/');
   };
 
   return (
