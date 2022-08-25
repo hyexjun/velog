@@ -70,7 +70,7 @@ const Write = () => {
     alert('포스팅 완료')
     // navigate('/')
     // window.location.reload(true)
-    window.onslotchange.replace('/')
+    window.location.replace('/')
   };
 
   //삭제 기능
