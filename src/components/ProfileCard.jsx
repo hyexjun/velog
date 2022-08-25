@@ -1,4 +1,4 @@
-const ProfileCard = ({user}) => {
+const ProfileCard = ({ user }) => {
   return (
     <>
       <div

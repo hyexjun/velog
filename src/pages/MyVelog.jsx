@@ -4,9 +4,12 @@ import PostCard from '../components/PostCard';
 import axios from 'axios';
 import { Layout } from './Main';
 import ProfileCard from '../components/ProfileCard';
+import { getCookie } from '../shared/Cookie';
 
 const MyVelog = () => {
   const [posts, setPosts] = useState([]);
+  const user = getCookie('username')
+
   const getAllPosts = async () => {
     // const res = await axios.get('http://localhost:3030/posts')
     // console.log('All Posts', res.data);
@@ -14,6 +17,7 @@ const MyVelog = () => {
     console.log('All Posts', data);
     setPosts(data);
   };
+
   useEffect(() => {
     getAllPosts();
   }, []);
@@ -21,7 +25,7 @@ const MyVelog = () => {
   return (
     <Layout>
       {/* 프로필 상단 박스 */}
-      <ProfileCard />
+      <ProfileCard user={user} />
       {/* 내 작성글들 */}
       <div
         style={{

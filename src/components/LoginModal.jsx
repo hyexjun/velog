@@ -50,11 +50,10 @@ export default function LoginModal() {
           token.refreshToken,
           token.refreshTokenExpireDate
         );
-        // setCookie(
-        //   'username',
-        //   res.data.data.username,
-        //   token.refreshTokenExpireDate
-        // );
+        setCookie(
+          'username',
+          token.username
+        );
         alert('로그인 성공');
         window.location.reload(true);
       })

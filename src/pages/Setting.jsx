@@ -1,6 +1,8 @@
 import { Layout } from './Main';
+import { getCookie } from '../shared/Cookie';
 
 const Setting = () => {
+  const user = getCookie('username');
   return (
     <Layout>
       <div className="wrap">
@@ -14,15 +16,15 @@ const Setting = () => {
             <button>이미지 제거</button>
           </div>
           <div className="setting-profile2">
-            <p>username</p>
-            <p>usermail@gmail.com</p>
+            <p>{user}</p>
+            <p>{user}@gmail.com</p>
             <p>수정</p>
           </div>
         </div>
         <div className="setting-body1">
           <div>
             <p>벨로그 제목</p>
-            <p>hyexjun.Devlog</p>
+            <p>{user}.Devlog</p>
             <p>수정</p>
           </div>
           <p>개인 페이지 좌측 상단에 나타나는 페이지 제목입니다.</p>
