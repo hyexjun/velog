@@ -80,18 +80,18 @@ export default function LoginModal() {
           <p>아이디로 {!signup ? '로그인' : '회원가입'}</p>
           <div style={{ display: 'flex' }}>
             <StForm>
-              <input
+              <StInput
                 type="text"
                 placeholder="아이디를 입력하세요"
                 ref={idRef}
               />
-              <input
+              <StInput
                 type="password"
                 placeholder="비밀번호를 입력하세요"
                 ref={pw1Ref}
               />
               {!signup ? null : (
-                <input
+                <StInput
                   type="password"
                   placeholder="비밀번호 한번더"
                   ref={pw2Ref}
@@ -164,6 +164,11 @@ const StForm = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
+const StInput = styled.input`
+  border: 1px solid #eee;
+  height: 30px;
+`
 
 export const StButton = styled.button`
   background-color: #12b886;
