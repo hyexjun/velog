@@ -31,6 +31,7 @@ export default function PostCard({ data }) {
           }}
         >
           며칠 전 • n개의 댓글
+          {/* {data.createdAt.slice(0, 14)} • n개의 댓글 */}
         </div>
         <div
           className="card-footer"

@@ -14,8 +14,8 @@ export default function Detail() {
   const [user, setUser] = useState();
 
   const getAllPostsFromMock = async () => {
-    // const res = await axios.get('http://localhost:3030/posts')
-    // console.log('All Posts', res.data);
+    const res = await axios.get('http://localhost:3030/posts')
+    console.log('All Posts', res.data);
     const { data } = await axios.get('http://localhost:3030/posts');
     console.log('All Posts', data);
     setPost(data);
@@ -50,6 +50,7 @@ export default function Detail() {
             <StTagList key={idx}>{tag}</StTagList>
           ))}
         </StTagBox>
+        <StImage src={post.imageUrls} alt="" />
         <StText>{post.content}</StText>
         <StButtonBox>
           <StButton>수정</StButton>
@@ -67,7 +68,7 @@ const StContentBox = styled.div`
   max-width: 700px;
   margin: 80px auto;
   text-align: justify;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 `;
 
 const StWriterInfo = styled.div`
@@ -90,8 +91,12 @@ const StTagList = styled.div`
   padding: 5px 15px;
 `;
 
+const StImage = styled.img`
+  width: 100%;
+`
+
 const StText = styled.div`
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin: 20px 0;
 `;
 
