@@ -12,10 +12,11 @@ export default function Detail() {
   const [post, setPost] = useState([]);
   const [tags, setTags] = useState([]);
   const [user, setUser] = useState();
-
+  const params =useParams();
+  console.log(params)
   const getAllPostsFromMock = async () => {
-    const res = await axios.get('http://localhost:3030/posts')
-    console.log('All Posts', res.data);
+    // const res = await axios.get('http://localhost:3030/posts')
+    // console.log('All Posts', res.data);
     const { data } = await axios.get('http://localhost:3030/posts');
     console.log('All Posts', data);
     setPost(data);
@@ -35,6 +36,14 @@ export default function Detail() {
       setUser(data.username);
     });
   };
+  const DeletePost =()=>{
+
+    console.log(params.id)
+
+    apis.removePost(params.id).then((res) => console.log(res)).catch((err) => console.log(err));
+    
+    // window.location.replace('/')
+  }
 
   return (
     <Layout>
@@ -54,7 +63,7 @@ export default function Detail() {
         <StText>{post.content}</StText>
         <StButtonBox>
           <StButton>수정</StButton>
-          <StButton>삭제</StButton>
+          <StButton onClick={DeletePost}>삭제</StButton>
         </StButtonBox>
       </StContentBox>
 
