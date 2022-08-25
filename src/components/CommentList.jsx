@@ -5,7 +5,7 @@ const CommentList = () => {
   return (
     <div style={{ marginBottom: '50px' }}>
       <StWriteBox>
-        <StComTitle>n개의 댓글</StComTitle>
+        <StComTitle>1개의 댓글</StComTitle>
         <StTextarea type="text" placeholder="댓글을 작성하세요" />
         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
           <StComAdd>댓글 작성</StComAdd>
