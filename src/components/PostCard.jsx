@@ -30,7 +30,8 @@ export default function PostCard({ data }) {
             color: 'grey',
           }}
         >
-          {data.createdAt.slice(0, 14)} • 1개의 댓글
+          {/* {data.createdAt.slice(0, 14)} • 1개의 댓글 */}
+          며칠 전 • 1개의 댓글
         </div>
         <div
           className="card-footer"
