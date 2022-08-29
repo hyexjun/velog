@@ -1,4 +1,4 @@
-# Mini Project #2 Music Picky
+# Mini Project #3 velog clone coding
 ### 프로젝트 기간 및 구성원 🎈
 - 기간 : 22년 8월 19일 ~ 25일
 - 프론트엔드 : 박혜정, 이장호 **(React)**
@@ -6,14 +6,7 @@
 
 🌈 시연 영상 구경하기 ▶ https://youtu.be/lQRcxn8wjNA
 
-![test](https://user-images.githubusercontent.com/97497201/185758458-d4fca82e-c5ae-4789-b182-c89b49f5f5a4.png)
-
-### 기획 소개 ✨
-- 추억이 담긴 노래를 공유하는 커뮤니티
-### 핵심 기능 🕶
-- 노래 공유 시 YouTube URL를 기재하고 앨범 커버 이미지를 업로드
-- 게시글 선택 시 모달 팝업을 통한 유튜브 플레이어 노출
-### 사용 기술 🎃
+### 사용 기술 🕶
 - yarn add react-bootstrap bootstrap
 - yarn add styled-component
 - yarn add axios
