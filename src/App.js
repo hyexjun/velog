@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route,Navigate} from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import Main from './pages/Main';
 import Detail from './pages/Detail';
@@ -8,12 +8,9 @@ import Write from './pages/Write';
 import Setting from './pages/Setting';
 import NotFound from './pages/NotFound';
 import { useState } from 'react';
-import {getCookie} from './shared/Cookie';
+import { getCookie } from './shared/Cookie';
 
 function App() {
-
-
-
   return (
     <BrowserRouter>
       <Header />
