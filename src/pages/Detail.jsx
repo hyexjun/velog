@@ -19,13 +19,15 @@ export default function Detail() {
     // const res = await axios.get('http://localhost:3030/posts')
     // console.log('All Posts', res.data);
     const { data } = await axios.get('http://localhost:3030/posts');
-    console.log('All Posts', data);
-    setPost(data);
+    console.log(`post ${id}`, data[id - 1]);
+    setPost(data[id - 1]);
+    setTags(data[id - 1].hashtags);
+    setUser(data[id - 1].username);
   };
 
   useEffect(() => {
-    // getAllPostsFromMock();
-    showDetail();
+    getAllPostsFromMock();
+    // showDetail();
   }, []);
 
   const showDetail = () => {
@@ -67,7 +69,7 @@ export default function Detail() {
             <StTagList key={idx}>{tag}</StTagList>
           ))}
         </StTagBox>
-        <StImage src={post.imageUrls} alt="" />
+        <StImage src={post.imageUrl} alt="" />
         <StText>{post.content}</StText>
         <StButtonBox>
           {/* <StButton>수정</StButton> */}

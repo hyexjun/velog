@@ -1,5 +1,5 @@
-import '@toast-ui/editor/dist/toastui-editor.css';
-import { Editor } from '@toast-ui/react-editor';
+// import '@toast-ui/editor/dist/toastui-editor.css';
+// import { Editor } from '@toast-ui/react-editor';
 import { useState, useRef } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
@@ -118,6 +118,13 @@ const Write = () => {
         placeholder="내용을 적어주세요"
         ref={contentsRef}
       ></StTextarea>
+      {/* <Editor
+        initialValue="hello react editor world!"
+        previewStyle="vertical"
+        height="600px"
+        initialEditType="markdown"
+        useCommandShortcut={true}
+      /> */}
       {/* <Form.Group controlId="formFileMultiple" className="mb-3"> */}
       {/* <Form.Label>사진추가,,</Form.Label> */}
       <Form.Control

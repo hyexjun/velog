@@ -15,8 +15,8 @@ const Main = () => {
   };
 
   useEffect(() => {
-    // getAllPostsFromMock();
-    showAll();
+    getAllPostsFromMock();
+    // showAll();
   }, []);
 
   const showAll = () => {
